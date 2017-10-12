@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Inspeção do DOM</title>
+        <style type="text/css" media="all">
+            #nos, #filhos {
+                float:left;
+                margin-right:30px;
+            }
+            i {clear:both;}
+        </style>
+
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function(){
+                $('button').one('click', function () {		
+                    $('#nos').html('<p>Nome dos nós contidos no parágrafo<br /><b>$("p").contents()</b></p><ul></ul>');
+                    $('#filhos').html('<p>Nome dos filhos do parágrafo<br /><b>$("p").children()</b></p><ul></ul>');
+	
+                    jQuery.each( $('p:eq(0)').contents(), function(i, val) {
+			
+                        if(val.nodeType == 2) alert('bingo')
+			
+                        var html = ('<li>' + val.nodeName + '</li>');
+                        $('#nos ul').append(html);
+                    });
+		
+                    jQuery.each( $('p:eq(0)').children(), function(i, val) {
+                        var html = ('<li>' + val.nodeName + '</li>');
+                        $('#filhos ul').append(html);
+                    });
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <button type="button">contents()</button><br />	
+
+        <p>Parágrafo com <span>um span </span><b>um bold</b>
+            e a seguir <i>um itálico</i> seguido do elemento &lt;br&gt;.<br />
+            <!-- aqui um comentário HTML -->
+            Na continuação <span>outro span</span> e finalmente <strong>strong.</strong></p>
+
+        <div id="nos"></div>
+        <div id="filhos"></div>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-4.4z.html">&laquo; anterior</a> | <a href="arquivo-4.4zb.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+

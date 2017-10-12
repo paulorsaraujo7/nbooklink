@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Imagens e galerias de fotos</title>
+        <style type="text/css" media="all">
+            body {
+                font: 80%/1.2 Arial, Helvetica, sans-serif;
+                color:#666;
+                padding:0;
+                margin:0;
+                background:#d6e2e5;
+            }
+            #tudo {
+                width:600px;
+                padding:0 20px;
+                margin:0 auto;
+                background:#fff;
+                border:1px dotted #999;
+            }
+            /* CSS para efeitos jQuery  */
+            #galeria {                                    
+                position:relative;
+                width:500px;
+                height:375px;
+                margin: 0 auto 5px auto;
+                border:4px solid #999;
+            }
+            /* Fim CSS para efeitos jQuery */
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            function animar() {	
+                $('#galeria img').eq(0).animate({opacity: 0}, 0 , function() {
+                    $(this).appendTo('#galeria').animate({opacity: 1}, 1000);
+                })
+            }	
+            $(document).ready(function() {
+                $('<p class="legenda" />').appendTo('#galeria');
+                $('.legenda').css({
+                    position: 'absolute',
+                    opacity: 0.9,
+                    visibility: 'hidden',
+                    width: '488px',
+                    left: -4,
+                    top: 380,
+                    color: '#333',
+                    zIndex: 1000,	
+                    fontSize: '14px',
+                    padding: '5px 10px',
+                    borderBottom: '1px dotted #fff',
+                    background: '#6cf',
+                    margin:0
+                });
+	
+                $('#galeria img').each(function() {
+                    $(this).css({
+                        position: 'absolute'
+                    })
+                })
+                rodar = setInterval(animar, 3000);
+		
+                $('#galeria img').hover(		
+                function() {
+                    clearInterval(rodar);
+                    $('.legenda').text( $(this).attr('alt') )
+                    .css('visibility', 'visible');
+                }, function() {
+                    $('.legenda').css('visibility', 'hidden');
+                    rodar = setInterval(animar,3000);
+                });
+            });
+            // ]]>
+        </script>
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Fotos de Brasília</h1>
+            <div id="galeria">
+                <img src="1.jpg" alt="Descrição da foto 1: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eleifend, purus quis laoreet faucibus, ante augue malesuada mi." />
+                <img src="2.jpg" alt="Descrição da foto 2: Donec ullamcorper cursus dolor. Duis vitae ipsum. Maecenas dapibus hendrerit diam." />
+                <img src="3.jpg" alt="Descrição da foto 3: Pellentesque sapien. Sed purus sapien, eleifend ac, volutpat ac, molestie eget, massa." />
+                <img src="4.jpg" alt="Descrição da foto 4: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam in eros. Aliquam mattis est et arcu." />
+                <img src="5.jpg" alt="Descrição da foto 5: Nulla facilisi. Duis euismod, lacus et cursus volutpat, dui arcu porttitor diam, at gravida nibh justo non erat." />
+                <img src="6.jpg" alt="Descrição da foto 6:Nullam quis justo. Duis porta, nisl faucibus porttitor pulvinar, neque erat."/>
+                <img src="7.jpg" alt="Descrição da foto 7: Pellentesque tortor tellus, faucibus nec, convallis at, tempor et, turpis. Aenean lacinia, enim non vehicula pharetra, neque orci pulvinar massa, vel sodales risus risus sed nibh. Integer dignissim felis eu ante. Donec nisl." />
+                <img src="8.jpg" alt="Descrição da foto 8: Ut vel diam. Donec a massa. Aenean nulla felis, porta et, suscipit vitae, condimentum at, justo. Fusce neque. In a magna euismod dolor sollicitudin commodo. Vestibulum turpis odio, pretium nec, lacinia sit amet, cursus porta, arcu. Vivamus erat. In velit." />
+                <img src="9.jpg" alt="Descrição da foto 9: Nulla aliquam vestibulum est." />
+                <img src="10.jpg" alt="Descrição da foto 10: Etiam adipiscing ligula vitae tortor. In hac habitasse platea dictumst. Curabitur urna lacus, pulvinar id, ornare a, viverra ut, arcu." />
+            </div>
+
+
+            <h2>Título nível 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eleifend, purus quis laoreet faucibus, ante augue malesuada mi, id rhoncus augue lorem eget elit. Ut sollicitudin sodales purus. Phasellus libero felis, blandit nec, commodo ut, imperdiet ut, nibh. Suspendisse potenti. Donec ullamcorper cursus dolor.</p> 
+
+            <i style="display:block; font-style:normal; margin:50px 0; border-top:1px dotted #ccc;
+               padding-top:5px;">Arquivos exemplo: <a href="arquivo-12.4j.html">&laquo; anterior</a> | <a href="../cap_13/arquivo-13.3a.html">capítulo 13 &raquo;</a></i></div>
+    </body>
+</html>

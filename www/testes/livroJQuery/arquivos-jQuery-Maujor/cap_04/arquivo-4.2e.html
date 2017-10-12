@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | CSS</title>
+        <style type="text/css" media="all">
+            div {
+                width:400px;
+                height:250px;
+                border:1px dotted #000;
+                margin:20px 0;
+                padding:5px 10px;
+                background:#d6e2e5;
+                overflow:scroll; 
+            }
+            p {width: 600px;}
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function(){
+                $('button:eq(0)').click(function() {
+                    var rolagemVertical = $('#rolagem').scrollTop(); 
+                    var rolagemHorizontal = $('#rolagem').scrollLeft(); 
+                    $('span').html('Posição da rolagem vertical: ' + rolagemVertical + ' px<br />Posição da rolagem horizontal: ' + rolagemHorizontal + ' px');
+                });
+	
+                $('button:eq(1)').click(function() {
+                    $('#rolagem').scrollTop(0); 
+                    $('#rolagem').scrollLeft(0); 
+                    $('span').empty();
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+
+        <p>Role as barras para qualquer posição e clique o botão <strong>Coordenadas scroll</strong></p>	
+        <button type="button">Coordenadas scroll</button>&nbsp;&nbsp;&nbsp;
+        <button type="reset">Reset</button><br />	
+
+        <div id="rolagem">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eleifend, purus quis laoreet faucibus, ante augue malesuada mi, id rhoncus augue lorem eget elit. Ut sollicitudin sodales purus. Phasellus libero felis, blandit nec, commodo ut, imperdiet ut, nibh. Suspendisse potenti. Donec ullamcorper cursus dolor. Duis vitae ipsum. Maecenas dapibus hendrerit diam. Morbi varius, massa id pretium accumsan, nunc lorem congue libero, ut euismod metus libero id nulla. Duis posuere odio sed velit vulputate venenatis. Suspendisse et dui ac metus auctor fringilla. Curabitur interdum augue a pede.</p>
+
+            <p>Curabitur hendrerit erat ut augue. Cras gravida. Mauris consequat aliquam leo. Aenean non tortor id metus aliquet consectetuer. Quisque sodales lectus ac orci. Donec eleifend fringilla mi. Vivamus vel massa. Aenean interdum pellentesque sem. Nulla pellentesque felis et tortor. Duis cursus, dui non dictum tincidunt, wisi ipsum mollis wisi, nec ornare velit ipsum eget enim. In sed felis. Phasellus condimentum sodales nulla. Etiam orci leo, rutrum malesuada, congue vel, fringilla vitae, lorem. Pellentesque ligula.</p>
+
+            <p>Pellentesque sapien. Sed purus sapien, eleifend ac, volutpat ac, molestie eget, massa. Nam a nibh. Nulla facilisi. Mauris ac metus. Donec porttitor, turpis et sollicitudin vehicula, nunc dui dignissim arcu, euismod hendrerit arcu est quis elit. In quam tellus, auctor in, dignissim at, euismod gravida, lacus. Nullam dui. Donec sit amet eros varius lacus laoreet vestibulum. Phasellus vestibulum vehicula velit. Vestibulum malesuada lectus eu urna.</p>
+
+            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam in eros. Aliquam mattis est et arcu. Duis scelerisque tempus diam. Morbi accumsan, dui sed auctor tincidunt, orci wisi imperdiet lacus, ut tincidunt arcu wisi vitae erat. Curabitur a lacus. Suspendisse odio nulla, elementum vitae, laoreet ac, rhoncus ut, lectus. Phasellus a tellus eleifend odio pellentesque condimentum. Etiam hendrerit metus ut mi. Quisque purus lorem, dictum dapibus, lacinia in, consequat non, diam. Nulla vulputate urna ac ligula. Mauris consectetuer lorem at dui. Phasellus semper risus sed ipsum varius laoreet. Ut tempus nisl eget risus. Nam felis.</p>
+
+            <p>Nulla facilisi. Duis euismod, lacus et cursus volutpat, dui arcu porttitor diam, at gravida nibh justo non erat. Cras vel sem eget erat pretium facilisis. Nullam et diam sed diam congue nonummy. Sed auctor dignissim turpis. Suspendisse fringilla diam eu urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla semper augue et lorem commodo vehicula. Cras sagittis dictum nisl. Suspendisse dapibus euismod libero. Nulla vel wisi venenatis est ornare placerat. Proin purus. In vehicula pede quis erat dapibus iaculis. Aenean at neque eu odio pellentesque molestie. Nullam quis justo. Duis porta, nisl faucibus porttitor pulvinar, neque erat tristique est, in fringilla leo neque et purus. Maecenas pellentesque lectus in odio.</p>
+
+            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sapien augue, euismod nec, aliquet nec, porttitor ut, libero. In id wisi vel diam pellentesque blandit. Duis eu magna eget est molestie dictum. Aenean vitae ipsum gravida nisl sodales egestas. Integer et quam. In et libero. Vestibulum quis dolor. Duis blandit suscipit tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur eu felis. Phasellus wisi. Suspendisse potenti. Morbi libero odio, dapibus eu, commodo non, feugiat eget, metus. Suspendisse tempus purus et lorem. Quisque dictum malesuada felis. Quisque condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin tincidunt libero non mi. Ut velit est, accumsan ut, euismod eget, venenatis nec, leo.</p>	
+        </div>
+
+        <span></span>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-4.2d.html">&laquo; anterior</a> | <a href="arquivo-4.3a.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Eventos</title>
+        <style type="text/css" media="all">
+            div {
+                width:200px; 
+                height:150px;
+                overflow:scroll;
+            }
+            b {color:red;}
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function(){
+                $('div').scroll(function(){
+                    $('b').text('Você acionou a barra de rolagem do div');
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <div>
+            <h4>Div com barra de rolagem</h4>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eleifend, purus quis laoreet faucibus, ante augue malesuada mi, id rhoncus augue lorem eget elit. Ut sollicitudin sodales purus. Phasellus libero felis, blandit nec, commodo ut, imperdiet ut, nibh. Suspendisse potenti. Donec ullamcorper cursus dolor. Duis vitae ipsum. Maecenas dapibus hendrerit diam. Morbi varius, massa id pretium accumsan, nunc lorem congue libero, ut euismod metus libero id nulla. Duis posuere odio sed velit vulputate venenatis. Suspendisse et dui ac metus auctor fringilla. Curabitur interdum augue a pede.</p>
+        </div>
+        <b></b>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-5.1m.html">&laquo; anterior</a> | <a href="arquivo-5.1o.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+

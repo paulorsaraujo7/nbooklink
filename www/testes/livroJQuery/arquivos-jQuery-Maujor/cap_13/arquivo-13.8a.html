@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Plugins</title>
+        <style type="text/css" media="all">
+            body {
+                font: 12px/1.2 Arial, Helvetica, sans-serif;
+                color:#666;
+                padding:0;
+                margin:30px 0;
+                background:#d6e2e5;
+            }
+            #tudo {
+                width:600px;
+                overflow:auto;
+                padding:20px;
+                margin:0 auto;
+                background:#fff;
+                border:1px dotted #999;
+            }
+            h1{font-size:16px; text-align:center;}
+            hr {margin:20px}
+            .basic {float:left;}
+            /* Folha de estilo padrão para o efeito sanfona */
+            .basic  {
+                width: 260px;
+                border: 1px solid black;
+            }
+            .basic div {
+                padding: 10px;
+            }
+            .basic a {
+                cursor:pointer;
+                display:block;
+                padding:5px;
+                text-decoration: none;
+                font-weight: bold;
+                color:#333;
+                background: #00a0c6 url(jquery-accordion/demo/AccordionTab0.gif);
+                border-top: 1px solid #fff;
+                border-bottom: 1px solid #999;
+            }
+            .basic a:link:hover, .basic a:hover {
+                background:#fff url(jquery-accordion/demo/AccordionTab2.gif);
+            }
+            .basic a.selected {
+                background: #80cfe2 url(jquery-accordion/demo/AccordionTab2.gif);
+            }
+            /* Fim da folha de estilo padrão para o efeito sanfona */
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript" src="jquery-accordion/jquery.accordion.js"></script> 
+        <script type="text/javascript">
+            //<![CDATA[
+            jQuery(document).ready(function() {
+                jQuery('#a_um').accordion();
+                jQuery('#a_dois').accordion({
+                    autoheight: false
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Sanfona simples</h1>
+            <div id="a_um" class="basic" >
+                <a>Plugin jQuery Accordion</a>
+                <div>
+                    <p>Este plugin foi desenvolvido por Jörn Zaefferer e sua documentação encontra-se hospedada em http://bassistance.de/jquery-plugins/jquery-plugin-accordion/. Trata-se de um plugin para obter o conhecido efeito sanfona e pode ser usado para esconder e revelar tanto conteúdos textuais como listas de links. Neste último caso é empregado no desenvolvimento de mecanismos de navegação.</p>
+                </div>
+
+                <a href="#">Estruturas de marcação HTML</a>
+                <div>
+                    <p>O plugin jQuery accordion admite várias estruturas de marcação HTML, cada uma em acordo com a natureza dos conteúdos a revelar e esconder. </p>
+                </div>
+                <a href="#">Instalação do plugin</a>
+                <div>
+                    <p>A instalação do plugin consiste tão somente em fazer o download dos arquivos, descompactá-los, hospedar a pasta raiz e linkar os arquivos requeridos.</p>
+                    <p>Visite http://bassistance.de/jquery-plugins/jquery-plugin-accordion/ e faça o download do arquivo disponível denominado jquery.accordion.zip. Descompacte o arquivo e hospede a pasta raiz denominada jquery-accordion. A pasta raiz contém várias subpastas e arquivos destinados a criar os diferentes efeitos a que o plugin se propõe.</p>
+                    <p>Caso você saiba exatamente o que está fazendo, poderá deletar pastas e/ou arquivos não utilizados no seu projeto, mas se tiver dúvidas mantenha a pasta raiz do plugin com todos seus conteúdos intactos. Tendo descompactado e hospedado o plugin vamos a uma visão geral dos seus componentes.  
+                    </p>
+                </div>
+            </div>
+
+            <div id="a_dois" class="basic" style="margin-left:20px;">
+                <a href="#">Plugin jQuery Accordion</a>
+                <div>
+                    <p>Este plugin foi desenvolvido por Jörn Zaefferer e sua documentação encontra-se hospedada em http://bassistance.de/jquery-plugins/jquery-plugin-accordion/. Trata-se de um plugin para obter o conhecido efeito sanfona e pode ser usado para esconder e revelar tanto conteúdos textuais como listas de links. Neste último caso é empregado no desenvolvimento de mecanismos de navegação.</p>
+                </div>
+
+                <a href="#">Estruturas de marcação HTML</a>
+                <div>
+                    <p>O plugin jQuery accordion admite várias estruturas de marcação HTML, cada uma em acordo com a natureza dos conteúdos a revelar e esconder. </p>
+                </div>
+                <a href="#">Instalação do plugin</a>
+
+                <div>
+                    <p>A instalação do plugin consiste tão somente em fazer o download dos arquivos, descompactá-los, hospedar a pasta raiz e linkar os arquivos requeridos.</p>
+                    <p>Visite http://bassistance.de/jquery-plugins/jquery-plugin-accordion/ e faça o download do arquivo disponível denominado jquery.accordion.zip. Descompacte o arquivo e hospede a pasta raiz denominada jquery-accordion. A pasta raiz contém várias subpastas e arquivos destinados a criar os diferentes efeitos a que o plugin se propõe.</p>
+                    <p>Caso você saiba exatamente o que está fazendo, poderá deletar pastas e/ou arquivos não utilizados no seu projeto, mas se tiver dúvidas mantenha a pasta raiz do plugin com todos seus conteúdos intactos. Tendo descompactado e hospedado o plugin vamos a uma visão geral dos seus componentes.  
+                    </p>
+                </div>
+            </div>
+
+            <i style="display:block; font-style:normal; margin:50px 0; border-top:1px dotted #ccc;
+               padding-top:5px; clear:left;">Arquivos exemplo: <a href="arquivo-13.6a.html">&laquo; anterior</a> | <a href="arquivo-13.9a.html">próximo &raquo;</a></i>
+        </div>
+    </body>
+</html>

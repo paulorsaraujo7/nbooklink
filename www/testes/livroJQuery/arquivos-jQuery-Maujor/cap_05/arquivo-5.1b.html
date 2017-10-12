@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Eventos</title>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function(){
+                $('select').change(function (){
+                    var valorEscolhido = $('option:selected').text();
+                    $('.mensagem').html('Você disparou o evento change.<br />Selecionou: ' + valorEscolhido);
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <p>Faça algumas seleções no campo select.</p>
+        <select>
+            <option>Escolha um</option>
+            <option>Escolha dois</option>
+            <option>Escolha três</option>
+            <option>Escolha quatro</option>
+            <option>Escolha cinco</option>
+            <option>Escolha seis</option>
+            <option>Escolha sete</option>
+        </select>
+        <p class="mensagem"></p>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-5.1a.html">&laquo; anterior</a> | <a href="arquivo-5.1c.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+

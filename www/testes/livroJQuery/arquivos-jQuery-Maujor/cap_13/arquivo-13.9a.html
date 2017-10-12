@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Plugins</title>
+        <style type="text/css" media="all">
+            body {
+                font: 12px/1.2 Arial, Helvetica, sans-serif;
+                color:#666;
+                padding:0;
+                margin:30px 0;
+                background:#d6e2e5;
+            }
+            #tudo {
+                width:600px;
+                overflow:auto;
+                padding:20px;
+                margin:0 auto;
+                background:#fff;
+                border:1px dotted #999;
+            }
+            h1{font-size:16px;margin:20px 0}
+            hr {margin:20px}
+            /* Folha de estilo padrão para o efeito sanfona */
+            #navigation {
+                border:1px solid #5263AB;
+                margin:0;
+                padding:0;
+                width:200px;
+            }
+            #navigation a.head {
+                border:1px solid #ccc;
+                background:#5263AB url(jquery-accordion/demo/collapsed.gif) no-repeat 3px 4px;
+                color:#fff;
+                display:block;
+                font-weight:bold;
+                margin:0;
+                padding:0;
+                text-indent:14px;
+                text-decoration: none;
+            }
+            #navigation a.head:hover {
+                color:#ff9;
+            }
+            #navigation a.selected {
+                background-image: url(jquery-accordion/demo/expanded.gif);
+            }
+            #navigation a.current {
+                background:#ff9;
+            }
+            #navigation ul {
+                margin:0;
+                padding:0;
+            }
+            #navigation li {
+                list-style:none;
+            }
+            #navigation li li a {
+                color:#333;
+                display:block;
+                text-indent:10px;
+                text-decoration: none;
+            }
+            #navigation li li a:hover {
+                background:#ff9;
+                color:#f00;
+            }
+            /* Fim da folha de estilo padrão para o efeito sanfona */
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript" src="jquery-accordion/jquery.accordion.js"></script> 
+        <script type="text/javascript" src="jquery-accordion/lib/jquery.easing.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            jQuery(document).ready(function() {
+                jQuery('#navigation').accordion({
+                    active: false,
+                    header: '.head',
+                    event: 'mouseover', //'click'
+                    fillSpace: false,
+                    animated: 'easeslide'// 'bounceslide'
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Menu sanfona</h1>
+            <ul id="navigation">
+                <li><a class="head" href="#">Destaques</a>  			
+                    <ul>					
+                        <li><a href="http://www.maujor.com/tutorial/faq.php" title="Uma coletânea de 45 perguntas e respostas sobre as CSS"><abbr>FAQ - CSS</abbr></a></li>
+                        <li><a href="http://www.maujor.com/quiz/NB_1.php" title="Teste seus conhecimentos CSS respondendo um questionário interativo">QUIZ - <abbr>CSS</abbr></a></li>
+                        <li ><a href="http://www.maujor.com/tutorial/cssnodw0.php" title="Aprenda a usar o editor de CSS do Dreamweaver MX2004">Editor <abbr>CSS</abbr> do <abbr title="Dreamweaver MX2004">DWMX 2004</abbr></a></li>
+                        <li ><a href="http://www.maujor.com/tutorial/joe/cssjoe1.php" title="Um tutorial em 15 páginas ensinando a construir um documento com CSS a partir do zero">Aprenda <abbr>CSS</abbr> desde o início</a></li>				
+                        <li ><a href="http://www.maujor.com/tutorial/sel-css3.php" title="Não perca seu tempo, a menos que voc&ecirc; não tenha outra coisa a fazer, como por exemplo, aprender CSS1 ou CSS2.1 se já sabe tudo de CSS1.">Devo aprender CSS3?</a></li>
+                    </ul>
+                </li>
+
+                <li><a class="head" href="#">Fundamentos CSS</a>
+                    <ul>					
+                        <li><a href="http://www.maujor.com/tutorial/intrtut.php" title="Uma tutorial introdução as CSS">Introdução às <abbr>CSS</abbr></a></li>
+                        <li><a href="http://www.maujor.com/tutorial/sintaxetut.php" title="Aprenda a escrever uma regra CSS"> Sintaxe <abbr>CSS</abbr></a></li>
+                        <li><a href="http://www.maujor.com/tutorial/insetut.php" title="Os tipos de folhas de estilos: extrernas, incorporadas e inline e como inserí-las em documentos HTML">Tipos de CSS</a></li>
+                        <li><a href="http://www.maujor.com/tutorial/fonttut.php" title="Aprenda como controlar com CSS os tamanhos, tipos, famílias, e todos os aspectos das fontes">A propriedade CSS font</a></li>
+                        <li><a href="http://www.maujor.com/tutorial/texttut.php" title="Aprenda como controlar com CSS as propriedades dos texto">A propriedade CSS text</a></li>
+                        <li><a href="http://www.maujor.com/tutorial/margintut.php" title="Aprenda como controlar com CSS as  margens de um elemento HTML">A propriedade CSS margin</a></li>
+                        <li><a href="http://www.maujor.com/tutorial/bordertut.php" title="Aprenda como controlar com CSS as espessuras, as cores e os tipos das bordas aplicadas a um elemento HTML">Propriedades das bordas</a></li>
+                        <li><a href="http://www.maujor.com/tutorial/paddingtut.php" title="Aprenda como controlar com CSS os  espaçamentos de um elemento HTML">A propriedade CSS padding</a></li>
+                        <li><a href="http://www.maujor.com/tutorial/backtut.php" title="Aprenda como controlar com CSS as cores de fundo e posicionar uma imagem de fundo em um elemento HTML">A propriedade CSS background</a></li>
+
+                        <li><a href="http://www.maujor.com/tutorial/listtut.php"  title="Aprenda como estilizar listas HTML, inclusive retirar marcadores, colocar imagens como marcadores, cores, e demais aspectos visuais">A propriedade CSS list</a></li>
+                        <li><a href="http://www.maujor.com/tutorial/pseetut.php" title="Aprenda como personalizar os pseudo-elementos primeira letra e primeira linha">Pseudo-elements</a></li>
+                        <li><a href="http://www.maujor.com/tutorial/elinhas.php" title="Controle com CSS o espaçamento entre as linhas. Isto não é possível com HTML">Entrelinhas</a></li>
+                        <li><a href="http://www.maujor.com/tutorial/medidascss.php" title="Entenda as unidades de medidas CSS. Unidades absolutas e relativas">Medidas <abbr>CSS</abbr></a></li>          
+                        <li><a href="http://www.maujor.com/tutorial/cores.php" title="As diversas maneiras de escrever uma regra CSS para definir cores com CSS">Regras <abbr>CSS</abbr> para cores</a></li>
+                        <li><a href="http://www.maujor.com/tutorial/abreviacss.php" title="Algumas propriedades CSS admitem forma abreviada para declaração de valores. Este tutorial detalha como abreviar tais declaraçõs ">Abreviando declarações <abbr>CSS</abbr></a></li> 
+                    </ul>
+                </li>
+
+                <li><a class="head" href="#">CSS em ação</a>
+                    <ul>					
+                        <li><a href="http://www.maujor.com/tutorial/interativo/ifont.php" title="Uma página interativa onde voc&ecirc; escolhe valores CSS para fontes e obtém como resposta na própria página o resultado visual e as regras CSS do que voc&ecirc; escolheu">Font interativo</a></li> 			
+                        <li><a href="http://www.maujor.com/tutorial/interativo/itext.php" title="Uma página interativa onde voc&ecirc; escolhe valores CSS para textos e obtém como resposta na própria página o resultado visual e as regras CSS do que voc&ecirc; escolheu">Text interativo</a></li> 			
+                        <li><a href="http://www.maujor.com/tutorial/interativo/iborder.php" title="Uma página interativa onde voc&ecirc; escolhe valores CSS para bordas e obtém como resposta na própria página o resultado visual e as regras CSS do que voc&ecirc; escolheu">Border interativo</a></li> 			
+                        <li><a href="http://www.maujor.com/tutorial/interativo/iback.php" title="Uma página interativa onde voc&ecirc; escolhe valores CSS para backgrounds (fundos) e obtém como resposta na própria página o resultado visual e as regras CSS do que voc&ecirc; escolheu">Background interativo</a></li>
+                        <li><a href="http://www.maujor.com/tutorial/isel.php" title="Uma página interativa para estudo de seletores CSS2.1">Seletores CSS2.1</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <i style="display:block; font-style:normal; margin:50px 0; border-top:1px dotted #ccc;
+               padding-top:5px;">Arquivos exemplo: <a href="arquivo-13.8a.html">&laquo; anterior</a> | <a href="arquivo-13.10.1a.html">próximo &raquo;</a></i>
+    </body>
+</html>

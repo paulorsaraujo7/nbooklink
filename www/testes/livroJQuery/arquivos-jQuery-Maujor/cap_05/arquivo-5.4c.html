@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Eventos</title>
+        <style type="text/css" media="all">
+            div {
+                width:150px; 
+                margin:20px 0;
+                height:90px;
+                border:2px solid #000;
+                background:#f00; 
+            }
+            p {width:90px;background:#ff0;}
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function(){
+                $('p').click(function(event) {
+                    event.stopImmediatePropagation();
+                });
+		
+                $('p, div').click(function() {
+                    $(this).css({
+                        background: '#fff',
+                        color: '#0f0'
+                    });
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <span>Clique os parágrafos e depois os divs</span>
+
+        <div>DIV<p>Parágrafo</p></div>
+        <p>Parágrafo</p>
+        <p>Parágrafo</p>
+        <div>DIV<p>Parágrafo</p></div>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-5.4b.html">&laquo; anterior</a> | <a href="arquivo-5.4d.html">próxima &raquo;</a></i>
+
+    </body>
+</html>
+

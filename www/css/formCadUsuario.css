@@ -1,0 +1,203 @@
+/* 
+    Document   : formCadastroUsuario
+    Created on : 25/06/2012, 23:04:25
+    Author     : Paulo Ricardo
+    Description:
+        Define as posiÃ§Ãµes dos elementos internos da div de cadastro de usuÃ¡rio
+localizada na home page.
+*/
+
+/*A div que contÃ©m o formulÃ¡rio de cadastro de usuÃ¡rio, INCLUINDO TITULO, DIV DE RESPOSTA E CAMPOS*/
+#divFormCadUsuario
+{
+    position: relative;
+    float: right;
+    width: 350px;
+    height: 420px;
+}
+
+
+/*DIV QUE CONTEM A RESPOSTA PARA O CADASTRO DE*/
+#divRespostaFormCadUsuario
+{
+    position: absolute;
+    top: 50px;
+    left: 10px;
+}
+
+#imgDivRespostaFormCadUsuario
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+
+#labelDivRespostaFormCadUsuario
+{
+    position: relative;
+    top: 0px;
+    left: 35px;
+    height: auto;
+}
+
+
+#imgCadUsuario
+{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+#labelTituloFormCadUsuario
+{
+}
+
+#labelFormCadUsuarioNome
+{
+    position: absolute;
+    left: 10px;
+    top: 85px;
+}
+#inputFormCadUsuarioNome
+{
+    position: absolute;
+    left: 10px;
+    top: 100px;
+    width: 325px;
+}
+#labelRespostaFormCadUsuarioNome
+{
+    position: absolute;
+    left: 10px;
+    top: 117px;
+    width: 330px;
+    height: auto;
+}
+
+
+#labelFormCadUsuarioEmail
+{
+    position: absolute;
+    left: 10px;
+    top: 135px;
+}
+
+#inputFormCadUsuarioEmail
+{
+    position: absolute;
+    left: 10px;
+    top: 150px;
+    width: 325px;
+}
+#labelRespostaFormCadUsuarioEmail
+{
+    position: absolute;
+    left: 10px;
+    top: 167px;
+    width: 330px;
+    height: auto;
+}
+
+
+#labelFormCadUsuarioSenha
+{
+    position: absolute;
+    left: 10px;
+    top: 185px;
+}
+
+#inputFormCadUsuarioSenha
+{
+    position: absolute;
+    left: 10px;
+    top: 200px;
+    width: 155px;
+}
+
+#labelRespostaFormCadUsuarioSenha
+{
+    position: absolute;
+    left: 10px;
+    top: 217px;
+    width: 360px;
+    height: auto;
+}
+
+
+#labelFormCadUsuarioConfirmaSenha
+{
+    position: absolute;
+    left: 180px;
+    top: 185px;
+
+}
+#inputFormCadUsuarioConfirmaSenha
+{
+    position: absolute;
+    left: 180px;
+    top: 200px;
+    width: 155px;
+}
+
+#labelFormCadUsuarioMensagemInicial
+{
+    position: absolute;
+    left: 10px;
+    top: 235px;
+}
+
+#textAreaFormCadUsuarioMensagemInicial
+{
+    position: absolute;
+    left: 10px;
+    top: 250px;
+    width: 320px;
+    min-height: 55px;
+    height: auto;
+}
+
+#imgCAPTCHA
+{
+    position: absolute;
+    left: 200px;
+    top: 325px;
+}
+
+#imgRecarregaCAPTCHA
+{
+    position: absolute;
+    left: 305px;
+    top: 330px;
+}
+
+
+#labelFormCadUsuarioImgCAPTCHA
+{
+    position: absolute;
+    left: 10px;
+    top: 330px;
+}
+
+#inputFormCadUsuarioImgCAPTCHA
+{
+    position: absolute;
+    width: 160px;
+    left: 10px;
+    top: 345px;
+}
+
+#labelRespostaFormCadUsuarioImgCAPTCHA
+{
+    position: absolute;
+    left: 10px;
+    top: 362px;
+    height: auto;
+}
+
+#inputSubmitFormCadUsuario{
+    position: absolute;
+    width: auto;
+    left: 10px;
+    top: 390px;
+}

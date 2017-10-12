@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Plugins</title>
+        <style type="text/css" media="all">
+            body {
+                width:500px;	
+                font: 80%/1.2 Arial, Helvetica, sans-serif;
+                color:#666;
+                margin:30px auto;
+                padding:0;
+            }
+            hr {margin:20px;}
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript" src="jcarousel/lib/jquery.jcarousel.pack.js"></script>  
+        <link  href="jcarousel/lib/jquery.jcarousel.css" rel="stylesheet" type="text/css" />
+        <link href="jcarousel/skins/ie7/skin.css" rel="stylesheet" type="text/css" />
+        <link href="jcarousel/skins/tango/skin.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript">
+            //<![CDATA[
+            jQuery(document).ready(function() {
+                jQuery('#chorizontal').jcarousel();
+                jQuery('#cvertical').jcarousel({
+                    vertical: true
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <h1>Carrossel horizontal</h1>
+        <ul id="chorizontal" class="jcarousel-skin-ie7">
+            <li><img src="1_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="2_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="3_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="4_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="5_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="6_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="7_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="8_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="9_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="10_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+        </ul>
+
+        <hr />
+
+        <h1>Carrossel vertical</h1>
+        <ul id="cvertical" class="jcarousel-skin-tango">
+            <li><img src="1_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="2_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="3_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="4_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="5_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="6_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="7_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="8_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="9_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="10_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+        </ul>
+
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #ccc;
+           padding-top:5px;">Arquivos exemplo: <a href="../cap_12/arquivo-12.4k.html">&laquo; capítulo 12</a> | <a href="arquivo-13.4a.html">próximo &raquo;</a></i>
+
+    </body>
+</html>

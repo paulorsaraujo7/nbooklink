@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Tabelas</title>
+        <style type="text/css" media="all">
+            body {
+                width:600px;	
+                font: 80%/1.2 Arial, Helvetica, sans-serif;
+                margin:30px auto;
+                padding:0;
+                color:#666;
+            }
+            table {
+                width:550px;
+                border-collapse: collapse;
+                border: 2px solid #999;
+                margin:0 auto;
+            }
+            caption { 
+                text-align: right;
+                margin-bottom: 0.3em;
+                border-bottom: 1px solid #333;
+                padding-right: 0.3em;
+            }
+            thead tr th {
+                text-align:center;
+                border-bottom: 2px solid #999;
+                border-left: 2px solid #999;
+            }
+            tr td, tr th {
+                padding: 1px 5px;
+                text-align:left;
+                font-size: 0.9em;
+                border: 1px dotted #333;
+            } 
+            tfoot tr td {
+                text-align:center;
+                border-top: 2px solid #999;
+            }
+            tr.sub {
+                background:#bfe2d8;
+                color:#036;
+            }
+            /* CSS para efeitos jQuery */
+            .impar {background:#d6e2e5;}
+            img.maismenos {border:none;margin-right:10px;vertical-align:middle;}
+            /* Fim CSS para efeitos jQuery */
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function() {
+                var mais = '<a href="#"><img src="mais.gif" alt="Revelar/ocultar cidades" class="maismenos" /></a>'
+                $('table#horario tbody tr:not(.sub):even').addClass('impar');			
+                $('table#horario tbody tr:not(.sub)').hide();	 
+                $('.sub th').css({borderBottom: '1px solid #333'}).prepend(mais);
+                $('img', $('.sub th'))
+                .click(function(event){
+                    event.preventDefault();
+                    if (($(this).attr('src')) == 'menos.gif'){
+                        $(this).attr('src', 'mais.gif')
+                        .parents()
+                        .siblings('tr').hide(); 
+                    } else {
+                        $(this).parents('tbody').siblings('tbody')
+                        .children('tr:not(tr.sub)').hide()
+                        $('.maismenos').attr('src', 'mais.gif')
+                        $(this).attr('src', 'menos.gif')
+                        .parents().siblings('tr').show();
+                    }; 
+                });
+            });
+            // ]]>
+        </script>
+    </head>
+    <body>
+        <table id="horario">
+            <caption>
+                Viação Alfa - Horários
+            </caption>
+            <thead>
+                <tr id="horizontal">
+                    <th>Destino</th>
+                    <th scope="col">Saída</th>
+                    <th scope="col">Chegada</th>
+                    <th scope="col">Classe </th>
+                    <th scope="col">Tarifa </th>
+                    <th scope="col">Frequência</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="6">Válida para o período de 02/10/2008 a 30/11/ 2008.</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr class="sub">
+                    <th colspan="6">Cidades no NORTE do Estado de Santa Catarina</th>
+                </tr>
+                <tr>
+                    <th scope="row">Brusque</th>
+                    <td>06:45</td>
+                    <td>14:30</td>
+                    <td>Convencional</td>
+                    <td>R$80,00</td>
+                    <td>Diária</td>
+                </tr>
+                <tr>
+                    <th scope="row">Joinville</th>
+                    <td>12:30</td>
+                    <td>21:00</td>
+                    <td>Convencional</td>
+                    <td>R$100,00</td>
+                    <td>Sábado</td>
+                </tr>
+                <tr>
+                    <th scope="row">Garuva</th>
+                    <td>19:00</td>
+                    <td>06:00</td>
+                    <td>Leito</td>
+                    <td>R$150,00</td>
+                    <td>Diária</td>
+                </tr>
+                <tr>
+                    <th scope="row">Porto União</th>
+                    <td>13:00</td>
+                    <td>18:00</td>
+                    <td>Convencional</td>
+                    <td>R$60,00</td>
+                    <td>Diária</td>
+                </tr>
+                <tr>
+                    <th scope="row">Canoinhas</th>
+                    <td>19:30</td>
+                    <td>07:30</td>
+                    <td>Leito</td>
+                    <td>R$190,00</td>
+                    <td>Seg. a Sex. </td>
+                </tr>
+                <tr>
+                    <th scope="row">S. Fco. Sul</th>
+                    <td>01:00</td>
+                    <td>07:00</td>
+                    <td>Convencional</td>
+                    <td>R$90,00</td>
+                    <td>Qua. a Sex. </td>
+                </tr>
+                <tr>
+                    <th scope="row">Jaraguá do Sul</th>
+                    <td>23:15</td>
+                    <td>08:45</td>
+                    <td>Leito</td>
+                    <td>R$250,00</td>
+                    <td>Sábado</td>
+                </tr>
+                <tr>
+                    <th scope="row">Rio Negrinho </th>
+                    <td>00:30</td>
+                    <td>23:00</td>
+                    <td>Executivo</td>
+                    <td>R$210,00</td>
+                    <td>Seg. e Dom.</td>
+                </tr>
+                <tr>
+                    <th scope="row">São Bento</th>
+                    <td>21:15</td>
+                    <td>23:45</td>
+                    <td>Leito</td>
+                    <td>R$280,00</td>
+                    <td>Sábado</td>
+                </tr>
+                <tr>
+                    <th scope="row">Mafra</th>
+                    <td>08:00</td>
+                    <td>16:00</td>
+                    <td>Convencional</td>
+                    <td>R$85,00</td>
+                    <td>Diária.</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr class="sub">
+                    <th colspan="6">Cidades no SUL do Estado de Santa Catarina</th>
+                </tr>
+                <tr>
+                    <th scope="row">Sombrio</th>
+                    <td>23:00</td>
+                    <td>06:00</td>
+                    <td>Executivo</td>
+                    <td>R$165,00</td>
+                    <td>Qua. e Sáb.</td>
+                </tr>
+                <tr>
+                    <th scope="row">São João do Sul</th>
+                    <td>03:00</td>
+                    <td>09:00</td>
+                    <td>Convencional</td>
+                    <td>R$105,00</td>
+                    <td>Qua. e Sab..</td>
+                </tr>
+                <tr>
+                    <th scope="row">Araranguá</th>
+                    <td>16:45</td>
+                    <td>19:30</td>
+                    <td>Executivo</td>
+                    <td>R$50,00</td>
+                    <td>Terça</td>
+                </tr>
+                <tr>
+                    <th scope="row">Urussanga</th>
+                    <td>14:30</td>
+                    <td>20:00</td>
+                    <td>Leito</td>
+                    <td>R$100,00</td>
+                    <td>Sábado</td>
+                </tr>
+                <tr>
+                    <th scope="row">Laguna</th>
+                    <td>18:00</td>
+                    <td>22:00</td>
+                    <td>Executivo</td>
+                    <td>R$75,00</td>
+                    <td>Diária.</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tubarão</th>
+                    <td>13:00</td>
+                    <td>21:00</td>
+                    <td>Executivo</td>
+                    <td>R$105,00</td>
+                    <td>Qua. e Dom.</td>
+                </tr>
+                <tr>
+                    <th scope="row">Crici&uacute;ma</th>
+                    <td>07:40</td>
+                    <td>14:00</td>
+                    <td>Leito</td>
+                    <td>R$125,00</td>
+                    <td>Dom.</td>
+                </tr>
+                <tr>
+                    <th scope="row">Lauro Muller </th>
+                    <td>09:30</td>
+                    <td>13:00</td>
+                    <td>Convencional</td>
+                    <td>R$140,00</td>
+                    <td>Diária</td>
+                </tr>
+                <tr>
+                    <th scope="row">Içara</th>
+                    <td>17:00</td>
+                    <td>01:00</td>
+                    <td>Executivo</td>
+                    <td>R$75,00</td>
+                    <td>Sábado</td>
+                </tr>
+                <tr>
+                    <th scope="row">São Joaquim</th>
+                    <td>23:00</td>
+                    <td>22:00</td>
+                    <td>Leito</td>
+                    <td>R$95,00</td>
+                    <td>Dom.</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr class="sub">
+                    <th colspan="6">Cidades no NORTE do Estado de Santa Catarina</th>
+                </tr>
+                <tr>
+                    <th scope="row">Brusque</th>
+                    <td>06:45</td>
+                    <td>14:30</td>
+                    <td>Convencional</td>
+                    <td>R$80,00</td>
+                    <td>Diária</td>
+                </tr>
+                <tr>
+                    <th scope="row">Joinville</th>
+                    <td>12:30</td>
+                    <td>21:00</td>
+                    <td>Convencional</td>
+                    <td>R$100,00</td>
+                    <td>Sábado</td>
+                </tr>
+                <tr>
+                    <th scope="row">Garuva</th>
+                    <td>19:00</td>
+                    <td>06:00</td>
+                    <td>Leito</td>
+                    <td>R$150,00</td>
+                    <td>Diária</td>
+                </tr>
+                <tr>
+                    <th scope="row">Porto União</th>
+                    <td>13:00</td>
+                    <td>18:00</td>
+                    <td>Convencional</td>
+                    <td>R$60,00</td>
+                    <td>Diária</td>
+                </tr>
+                <tr>
+                    <th scope="row">Canoinhas</th>
+                    <td>19:30</td>
+                    <td>07:30</td>
+                    <td>Leito</td>
+                    <td>R$190,00</td>
+                    <td>Seg. a Sex. </td>
+                </tr>
+                <tr>
+                    <th scope="row">S. Fco. Sul</th>
+                    <td>01:00</td>
+                    <td>07:00</td>
+                    <td>Convencional</td>
+                    <td>R$90,00</td>
+                    <td>Qua. a Sex. </td>
+                </tr>
+                <tr>
+                    <th scope="row">Jaraguá do Sul</th>
+                    <td>23:15</td>
+                    <td>08:45</td>
+                    <td>Leito</td>
+                    <td>R$250,00</td>
+                    <td>Sábado</td>
+                </tr>
+                <tr>
+                    <th scope="row">Rio Negrinho </th>
+                    <td>00:30</td>
+                    <td>23:00</td>
+                    <td>Executivo</td>
+                    <td>R$210,00</td>
+                    <td>Seg. e Dom.</td>
+                </tr>
+                <tr>
+                    <th scope="row">São Bento</th>
+                    <td>21:15</td>
+                    <td>23:45</td>
+                    <td>Leito</td>
+                    <td>R$280,00</td>
+                    <td>Sábado</td>
+                </tr>
+                <tr>
+                    <th scope="row">Mafra</th>
+                    <td>08:00</td>
+                    <td>16:00</td>
+                    <td>Convencional</td>
+                    <td>R$85,00</td>
+                    <td>Diária.</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr class="sub">
+                    <th colspan="6">Cidades no SUL do Estado de Santa Catarina</th>
+                </tr>
+                <tr>
+                    <th scope="row">Sombrio</th>
+                    <td>23:00</td>
+                    <td>06:00</td>
+                    <td>Executivo</td>
+                    <td>R$165,00</td>
+                    <td>Qua. e Sáb.</td>
+                </tr>
+                <tr>
+                    <th scope="row">São João do Sul</th>
+                    <td>03:00</td>
+                    <td>09:00</td>
+                    <td>Convencional</td>
+                    <td>R$105,00</td>
+                    <td>Qua. e Sab..</td>
+                </tr>
+                <tr>
+                    <th scope="row">Araranguá</th>
+                    <td>16:45</td>
+                    <td>19:30</td>
+                    <td>Executivo</td>
+                    <td>R$50,00</td>
+                    <td>Terça</td>
+                </tr>
+                <tr>
+                    <th scope="row">Urussanga</th>
+                    <td>14:30</td>
+                    <td>20:00</td>
+                    <td>Leito</td>
+                    <td>R$100,00</td>
+                    <td>Sábado</td>
+                </tr>
+                <tr>
+                    <th scope="row">Laguna</th>
+                    <td>18:00</td>
+                    <td>22:00</td>
+                    <td>Executivo</td>
+                    <td>R$75,00</td>
+                    <td>Diária.</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tubarão</th>
+                    <td>13:00</td>
+                    <td>21:00</td>
+                    <td>Executivo</td>
+                    <td>R$105,00</td>
+                    <td>Qua. e Dom.</td>
+                </tr>
+                <tr>
+                    <th scope="row">Crici&uacute;ma</th>
+                    <td>07:40</td>
+                    <td>14:00</td>
+                    <td>Leito</td>
+                    <td>R$125,00</td>
+                    <td>Dom.</td>
+                </tr>
+                <tr>
+                    <th scope="row">Lauro Muller </th>
+                    <td>09:30</td>
+                    <td>13:00</td>
+                    <td>Convencional</td>
+                    <td>R$140,00</td>
+                    <td>Diária</td>
+                </tr>
+                <tr>
+                    <th scope="row">Içara</th>
+                    <td>17:00</td>
+                    <td>01:00</td>
+                    <td>Executivo</td>
+                    <td>R$75,00</td>
+                    <td>Sábado</td>
+                </tr>
+                <tr>
+                    <th scope="row">São Joaquim</th>
+                    <td>23:00</td>
+                    <td>22:00</td>
+                    <td>Leito</td>
+                    <td>R$95,00</td>
+                    <td>Dom.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Nota:</strong> Repetimos as cidades nas regiões Sul e Norte com os mesmos dados, para fins de visualizar o exemplo abre e fecha automático com quatro blocos</p>
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #ccc;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-10.6a.html">&laquo; anterior</a> | <a href="../cap_11/arquivo-11.2a.html"> capítulo 11 &raquo;</a></i>
+
+    </body>
+</html>

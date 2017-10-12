@@ -1,0 +1,139 @@
+/* 
+    Document   : topo.css
+    Created on : 03/03/2011, 10:08:14
+    Author     : Paulo Ricardo
+    Description:
+        Define as posições dos elementos da div topo (div login, botoes e outros)
+*/
+
+/* 
+
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+
+#imgLogoMarca
+{
+    position: relative;
+    float: left;
+    left : 20px;
+    top  : 10px;
+}
+
+
+#divFormLogin
+{
+    position: relative;
+    top     : 10px;
+    left    : 500px;
+    width   : 470px;
+    color   :#ffffff; /*cor das fontes da div*/
+}
+
+
+#labelFormLoginEmail
+{
+    position: absolute;
+    left: 10px;
+    top:10px;
+}
+
+#inputFormLoginEmail
+{
+    position: absolute;
+    left: 10px;
+    top:25px;
+    width: 200px;
+}
+
+
+
+#labelFormLoginSenha
+{
+    position: absolute;
+    left: 220px;
+    top:10px;
+}
+
+
+#inputFormLoginSenha
+{
+    position: absolute;
+    left: 220px;
+    top:25px;
+    width: 200px;
+}
+
+
+
+#checkManterConectado
+{
+    position: absolute;
+    left: 5px;
+    top: 45px;
+}
+
+
+#labelCheckMaterConectado
+{
+    position: absolute;
+    left: 30px;
+    top: 46px;
+}
+
+#linkRecuperarSenha
+{
+    position: absolute;
+    left: 220px;
+    top: 46px;
+    color: #ffffff;
+}
+
+#inputSubmitFormLogin{
+    position: absolute;
+    left: 425px;
+    top: 25px;
+}
+
+
+
+
+#linkIdiomaPortuguesBrasil
+{
+    position: absolute;
+    top: 0px;
+    left: 50px;
+
+
+}
+
+#linkIdiomaInglesEUA
+{
+    position: absolute;
+    top: 0px;
+    left: 90px;
+
+
+}
+
+#spanBandeiras
+{
+    position: relative; left: 645px; top:73px
+}
+
+#informacoesUsuarioTopoLogado
+{
+  color: #ffffff;   
+  height: 80px; 
+  min-width: 200px; 
+  float: right; 
+  margin-right: 10px; 
+  margin-top: 10px; 
+  line-height: 20px;
+}
+
+/*link de logout*/
+#informacoesUsuarioTopoLogado > a {
+    color: #ffffff
+}
+

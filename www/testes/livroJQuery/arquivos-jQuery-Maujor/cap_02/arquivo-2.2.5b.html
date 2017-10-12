@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Seletor :visible</title>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('button').click(function () {
+                    var totalVisiveis = $(':visible', $('body')).length;
+	
+                    $('span').text('Foram encontrados ' + totalVisiveis + ' elementos visíveis no documento.') /* escrever o resultado */  	
+			
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+        <button type="button">Visíveis</button>
+
+        <h1>Cabeçalho nível 1</h1>
+        <p>Texto de um parágrafo</p>
+
+        <span></span> <!--aqui jQuery escreve o resultado de elementos visiveis encontrados -->
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-2.2.5a.html">&laquo; anterior</a> | <a href="arquivo-2.2.6a.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+

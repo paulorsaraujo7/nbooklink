@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Eventos</title>
+        <style type="text/css" media="all">
+            div {
+                cursor:pointer;
+                width:100px;
+                height:100px;
+                border:2px solid #000;
+            }
+            span {display:block;}
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function(){
+                $('div').bind('mouseover', function(){
+                    $(this).css('borderWidth', '10px');
+                    $('span:eq(0)').text('Ocorreu o evento mouseover. Aumentou espessura da borda.');
+                });
+		
+                $('div').bind('click', function(o){
+                    var coordenadas = 'x= ' + o.pageX + ',  y= ' + o.pageY;
+                    $('span:eq(1)').text('Ocorreu o evento click nas coordenadas: ' + coordenadas);
+                });
+    	
+                $('div').bind('dblclick', function(){
+                    $(this).css('background', 'red');			
+		
+                    $('span:eq(2)').text('Ocorreu o evento dblclick. Mudou a cor de fundo.');
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <p>Eventos vinculados com bind():</p>
+        <ul>
+            <li>mouseover - aumenta espessura das bordas.</li>
+            <li>click - armazena e mostra as coordenadas do click.</li>
+            <li>dblclick - troca cor de fundo.</li>
+        </ul>
+        <div></div>
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-5.2g.html">&laquo; anterior</a> | <a href="arquivo-5.3b.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+

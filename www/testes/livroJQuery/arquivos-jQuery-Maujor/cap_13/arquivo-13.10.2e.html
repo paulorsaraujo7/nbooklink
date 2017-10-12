@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Plugins</title>
+        <style type="text/css" media="all">
+            div {
+                width:230px;
+                height:100px;
+                margin-top:30px;
+                padding:5px 10px;
+                color:#060;
+                background:#ff0;
+                border:2px solid #000;
+            }
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            (function($) {	
+                $.fn.aplicaLargura = function(larg) {
+                    return this.each(function() {
+                        $(this).css('width', larg);
+                    });
+                }
+            })(jQuery) 	
+            $(document).ready(function() {
+                $('button:eq(0)').click(function() {
+                    $('div').aplicaLargura(600).text('Texto inserido após aplicação da largura');
+                });
+		
+                $('button:eq(1)').click(function() { 
+                    $('div').css('width', 230).text('');
+                });
+            })
+            // ]]>
+        </script>
+    </head>
+    <body>
+        <h1>Métodos - Exemplo 5</h1> 
+        <button type="button">Aplicar largura - com encadeamento e uso do alias $</button>
+        <button type="button">Reset</button>
+        <div></div>
+
+        <i style="display:block; font-style:normal; margin:50px 0; border-top:1px dotted #ccc;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-13.10.2d.html">&laquo; anterior</a> | <a href="arquivo-13.10.2f.html">próximo &raquo;</a></i>
+    </body>
+</html>

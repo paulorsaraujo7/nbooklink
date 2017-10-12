@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Exemplos práticos</title>
+        <style type="text/css" media="all">
+            body {
+                width:700px;	
+                font: 80%/1.2 Arial, Helvetica, sans-serif;
+                margin:0 auto;
+            }
+            label {color:#c30;}
+            p {background:#444;color:#fff;}
+            button {font-size:0.9em;}
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function() {
+                $('html').css('height','101%');
+                $('h1').after('<button type="button">Esconder</button>');
+                var emAndamento = '<img src="carregando.gif" class="gif-andamento" />';
+                var alturaJanela = $(window).height();
+                var alturaObjeto = $('p').outerHeight();
+                var posicaoObjeto = $('p').position().top;
+                var amplitudeDeslocamento = alturaJanela - alturaObjeto - posicaoObjeto;
+                $('button').click(function() {
+                    if ($(this).text() == 'Mostrar') { 
+                        $(this).text('Esconder').hide().after(emAndamento);				
+                        $('p').show()
+                        .animate({top: 0, opacity: 1}, 2500, function() {
+                            $('.gif-andamento').css('display', 'none');
+                            $('button').show();
+                        }
+                    );
+                    } else {
+                        $(this).text('Mostrar').hide().after(emAndamento);
+                        $('p').css({position: 'relative'})
+                        .animate({top: amplitudeDeslocamento, opacity: 0}, 2500, function(){
+                            $('p').hide();			
+                            $('.gif-andamento').css('display', 'none');
+                            $('button').show();
+                        }
+                    );
+                    };
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <h1>Folhas de estilo em cascata</h1>
+        <p>A grande vantagem do uso de CSS é a de separar a marcação HTML, da apresentação do site. Em outras palavras, vale dizer que o HTML destina-se unicamente a estruturar e marcar o conteúdo, ficando por conta das CSS toda a responsabilidade pelo visual do documento.</p>
+
+        <i style="display:block; font-style:normal; margin:50px 0; border-top:1px dotted #ccc;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-8.6a.html">&laquo; anterior</a> | <a href="arquivo-8.7b.html">próximo &raquo;</a>
+
+        </i></body>
+</html>
+

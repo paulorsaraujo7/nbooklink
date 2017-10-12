@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Inspeção do DOM</title>
+        <style type="text/css" media="all">
+            div{border:2px solid #000;}
+            div.interna {
+                width:180px;
+                height:80px;
+                background:#0f0;
+            }
+            div.externa {
+                width:180px;
+                height:80px;
+                background:#ff0;
+                padding:5px 40px 40px 40px;
+                margin:20px 0;
+            }
+            button {display:block;margin:5px 0;}
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function() {
+                $('button:eq(4)').css('visibility', 'hidden');
+                var botoes = $('button:eq(0), button:eq(1), button:eq(2), button:eq(3)');
+		
+                $('button:eq(0)').click(function() {
+                    botoes.css('visibility', 'hidden');
+                    $('button:eq(4)').css('visibility', 'visible');
+                    $('span').closest('p').css('background', '#f00');
+                });
+		
+                $('button:eq(1)').click(function() {
+                    botoes.css('visibility', 'hidden');
+                    $('p').css('background', 'none');
+                    $('button:eq(4)').css('visibility', 'visible');
+                    $('span').closest('div').css('background', '#f00');
+                });
+		
+                $('button:eq(2)').click(function() {
+                    $('p').css('background', 'none')
+                    $('button:eq(4)').css('visibility', 'visible');
+                    botoes.css('visibility', 'hidden');
+                    $('span').parent('div').css('background', '#f00');
+                });
+		
+                $('button:eq(3)').click(function() {
+                    $('p').css('background', 'none')
+                    $('button:eq(4)').css('visibility', 'visible');
+                    botoes.css('visibility', 'hidden');
+                    $('span').parents('div').css('background', '#f00');
+                });
+		
+		
+                $('button:eq(4)').click(function() {
+                    botoes.css('visibility', 'visible');
+                    $('.interna, p').css('background', '#0f0');
+                    $('.externa').css('background', '#ff0');
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+
+        <button type="button">$('span').closest('p')</button>
+        <button type="button">$('span').closest('div')</button>
+        <button type="button">$('span').parent('div')</button>
+        <button type="button">$('span').parents('div')</button>
+        <button type="button">Reset</button>
+        <div class="externa">
+            DIV EXTERNA
+            <div class="interna">
+                DIV INTERNA
+                <p><span>Texto em SPAN e P</span></p></div>
+        </div>
+
+        <div class="externa">
+            DIV EXTERNA
+            <div class="interna">
+                DIV INTERNA
+                <span>Texto em SPAN</span></div>
+        </div>
+
+        <i style="visibility:visible; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-4.4v.html">&laquo; anterior</a> | <a href="arquivo-4.4y.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | FAQ CSS</title>
+        <style type="text/css" media="all">
+            body {
+                width:400px;	
+                font: 80%/1.2 Arial, Helvetica, sans-serif;
+                margin:0 auto;
+                padding:0;
+            }
+            dt {
+                margin:20px 0 3px 0;
+                font-weight: bold;
+                border-bottom:1px solid #ccc;
+            }
+            dd {
+                margin:0;
+                padding:5px 0 0 0;
+                text-align:justify;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>FAQ CSS</h1>
+        <h2 id="indice">Índice</h2>  
+        <ol>
+            <li><a href="#css">O que significa a sigla CSS?</a></li>
+            <li><a href="#finalidade">Qual é a finalidade das CSS?</a></li>
+            <li><a href="#porque">Por que devo usar CSS?</a></li>
+            <li><a href="#vantagens">Quais as vantagens de usar CSS?</a></li>
+            <li><a href="#webstandards">As CSS estão de acordo com as Web Standards?</a></li>
+            <li><a href="#regracss">O que é regra CSS ?</a></li>
+            <li><a href="#escrregra">Como escrevo uma regra CSS ?</a></li>
+            <li><a href="#charp">Quais caracteres são permitidos em CSS?</a></li>
+            <li><a href="#case">As sintaxe CSS é sensível a maiúsculas/minúsculas?</a></li>
+            <li><a href="#comentario">Posso incluir comentários nas regras CSS?</a></li>
+        </ol>
+
+        <h3>Perguntas e respostas</h3>
+        <dl>
+            <dt id="css">O que significa a sigla CSS?</dt>
+            <dd>CSS é a sigla para Cascading Style Sheets que em português foi traduzido para <em>folhas de estilo em cascata</em> e nada mais é, que um documento onde são definidas regras de fomatação ou de estilos,  a serem aplicadas  aos elementos estruturais de marcação.</dd>
+            <dd><a href="#indice">Índice</a></dd>
+
+            <dt id="finalidade">Qual é finalidade das CSS?</dt>
+            <dd>A finalidade das CSS é a de retirar do HTML toda e qualquer declaração que vise a formatação, a apresentação do documento. Isto significa dizer que tags do tipo <code>&lt;font&gt;</code>,<code> &lt;b&gt;</code>, &lt;i&gt;, etc, bem como uso de colunas e linhas de tabelas para obtenção de espaçamentos não são admitidos ou admitidos com restrições em um projeto Web com CSS. Vale dizer simplificando: <em>HTML para estruturação e CSS para apresentação. </em></dd>
+            <dd><a href="#indice">Índice</a></dd>
+
+            <dt id="porque">Porque devo usar  CSS?</dt>
+            <dd>CSS permite que você retire da marcação HTML toda a formatação (apresentação) do documento WEB. Quem vai determinar cores, formas, tipos e tamanhos, posicionamento e em fim todo o "visual" da página são as CSS. As vantagens estão relatadas nas respostas a seguir.</dd>
+            <dd><a href="#indice">Índice</a></dd>
+
+            <dt id="vantagens">Quais as vantagens de se usar CSS?</dt>
+            <dd>Inúmeras são as vantagens do uso das CSS nos documentos Web. Eis uma relação das principais:
+                <ul>
+                    <li>controle total sôbre a apresentação do site a partir de um arquivo central;</li>
+                    <li>agilização da manutenção e redesign do site;</li>
+                    <li>saida para diferentes tipos de mídia a partir de uma versão única de HTML;</li>
+                    <li>redução do tempo de carga dos documentos Web;</li>
+                    <li>adequação simplificada aos critérios de acessibilidade e usabilidade;</li>
+                    <li>elaboração de documentos consistentes com as aplicações de usuários futuras;</li>
+                    <li>aumento considerável na portabilidade dos documentos Web.</li>
+                </ul></dd>
+            <dd><a href="#indice">Índice</a></dd>
+
+            <dt id="webstandards">As CSS estão de acordo com as Web Standards?</dt>
+            <dd>Sim estão. As CSS estão entre as práticas vivamente recomendadas pelo W3C para projetos Web. Os esforços dos sórgãos normatizadores apontam no momento atual para elaboração de documentos Web acessíveis, usáveis e portáteis com grande ênfase. E, CSS facilita e simplifica a obtenção destas três variáveis.</dd>
+            <dd><a href="#indice">Índice</a></dd>
+
+            <dt id="regracss">O que é regra CSS?</dt>
+            <dd>Regra CSS e uma unidade mínima de programação de estilos, que segue uma sintaxe própria e destina-se a estilizar uma ou mais propriedades CSS. (ver resposta seguinte)</dd>
+            <dd><a href="#indice">Índice</a></dd>
+
+            <dt id="escrregra">Como escrevo uma regra CSS?</dt>
+            <dd>A sintaxe de uma regra CSS compreende um <em>seletor</em> uma <em>propriedade</em> e um <em>valor </em>escritos como mostrado abaixo: 
+
+                <p><strong>seletor { propriedade: valor; } </strong> </p>
+                <p>Nota: ao conjunto propriedade:valor denominamos declaração CSS</p>
+                <p>Por exemplo:</p>
+                <pre><code>p {text-indent:10pt;} é uma regra CSS
+	p é o seletor.
+	{text-indent: 10pt} é a declaração CSS.
+	text-indent - é a propriedade CSS
+	10pt - é o valor CSS</code></pre>
+            </dd>
+            <dd><a href="#indice">Índice</a></dd>
+
+            <dt id="charp">Quais são os caracteres permitidos em regras CSS?</dt> 
+            <dd>São as letras de a-z, A-Z, os números de 0-9, underscore, hífen e caracteres de escape. Caracteres Unicode 161-255, bem como caracteres Unicode como csódigos numéricos. Não é permitido iniciar-se um nome com um traço ou número.</dd>
+            <dd><a href="#indice">Índice</a></dd>
+
+            <dt id="case">As sintaxe CSS é sensível a maiúsculas/minúsculas?</dt>
+            <dd> Não. Regras CSS não são case sensitivas, isto é, pode-se usar maiúsculas ou minúsculas nas folhas de estilo indeferentemente. Isto é válido ssómente para as declarações específicas de CSS. Por exemplo: mesmo numa declaração CSS, figura.gif é diferente de FIGURA.gif</dd>
+            <dd><a href="#indice">Índice</a></dd>
+
+            <dt id="comentario">Posso incluir comentários nas regras CSS?</dt>
+            <dd>Sim. Comentários podem e devem ser usados nas folhas de estilo. E recomendável que se faça amplo uso de comentários para fornecer informações sobre os seletores, propriedades e valores declarados, com o intuito de facilitar futuras modificações ou mesmo entendimento do csódigo gerado. Os comentários devem estar entre as marcas <strong>/* e */</strong> e podem ser inseridos em qualquer espaço em branco dentro da folha de estilos. Não são permitidos comentários aninhados.
+                <pre><code>/* Isto é um comentário CSS */</code></pre></dd>
+            <dd><a href="#indice">Índice</a></dd>
+
+        </dl>
+
+        <p style="margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="../cap_08/arquivo-8.7b.html">&laquo; capítulo 8</a> | <a href="arquivo-9.1b.html">próximo &raquo;</a></p>
+
+    </body>
+</html>

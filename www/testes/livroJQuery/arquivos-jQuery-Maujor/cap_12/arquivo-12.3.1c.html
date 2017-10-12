@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Imagens e galerias de fotos</title>
+        <style type="text/css" media="all">
+            body {
+                font: 80%/1.2 Arial, Helvetica, sans-serif;
+                color:#666;
+                padding:0;
+                margin:0;
+                background:#d6e2e5;
+            }
+            #tudo {
+                width:600px;
+                padding:0 20px;
+                margin:0 auto;
+                background:#fff;
+                border:1px dotted #999;
+            }
+            .foto {border:none;}
+            /* CSS para efeitos jQuery  */
+            #tela {
+                width:500px;
+                height:375px;
+                margin: 15px 0;
+                border:8px solid #999;
+            }
+            /* Fim CSS para efeitos jQuery */
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function() {
+                $('.abre-fecha').hide();
+                $('<div id="tela" ><img src="10.jpg" alt="Descrição da imagem" /></div>')
+                .insertAfter('#galeria');
+                $('.foto').click(function(event) {
+                    event.preventDefault();
+                    $('#tela img').remove();
+                    $('<img />')
+                    .attr('src', $(this).attr('src'))
+                    .css('opacity', '0.3')
+                    .appendTo('#tela')
+                    .animate({opacity: 1 }, 2000);
+                });
+            });
+            // ]]>
+        </script>
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Fotos de Brasília</h1>
+            <div id="galeria">
+                <a href="1.jpg"><img src="1.jpg" alt="Descrição da foto" width="100" height="75" class="foto" /></a>
+                <a href="2.jpg"><img src="2.jpg" alt="Descrição da foto" width="100" height="75"  class="foto" /></a>
+                <a href="3.jpg"><img src="3.jpg" alt="Descrição da foto" width="100" height="75"  class="foto" /></a>
+                <a href="4.jpg"><img src="4.jpg" alt="Descrição da foto" width="100" height="75"  class="foto" /></a>
+                <a href="5.jpg"><img src="5.jpg" alt="Descrição da foto" width="100" height="75"  class="foto" /></a>
+                <a href="6.jpg"><img src="6.jpg" alt="Descrição da foto" width="100" height="75"  class="foto" /></a>
+                <a href="7.jpg"><img src="7.jpg" alt="Descrição da foto" width="100" height="75"  class="foto" /></a>
+                <a href="8.jpg"><img src="8.jpg" alt="Descrição da foto" width="100" height="75"  class="foto" /></a>
+                <a href="9.jpg"><img src="9.jpg" alt="Descrição da foto" width="100" height="75" class="foto" /></a>
+                <a href="10.jpg"><img src="10.jpg" alt="Descrição da foto" width="100" height="75"  class="foto" /></a>
+            </div>
+
+            <span class="abre-fecha">Clique para ampliar</span>
+
+            <h2>Título nível 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eleifend, purus quis laoreet faucibus, ante augue malesuada mi, id rhoncus augue lorem eget elit. Ut sollicitudin sodales purus. Phasellus libero felis, blandit nec, commodo ut, imperdiet ut, nibh. Suspendisse potenti. Donec ullamcorper cursus dolor.</p> 
+
+            <i style="display:block; font-style:normal; margin:50px 0; border-top:1px dotted #ccc;
+               padding-top:5px;">Arquivos exemplo: <a href="arquivo-12.3.1b.html">&laquo; anterior</a> | <a href="arquivo-12.4a.html">próximo &raquo;</a></i>
+        </div>
+    </body>
+</html>

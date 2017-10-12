@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Plugins</title>
+        <style type="text/css" media="all">
+            body {
+                width:350px;	
+                font: 80%/1.2 Arial, Helvetica, sans-serif;
+                color:#666;
+                margin:30px auto;
+                padding:0;
+            }
+            h1 {font-size:16px;}
+        </style>
+        <style type="text/css">
+            /**
+             * Folha de estilos para os controles do carrosel.
+            */
+            .jcarousel-control {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            .jcarousel-control a {
+                font-size: 75%;
+                text-decoration: none;
+                padding: 0 5px;
+                margin: 0 0 5px 0;
+                border: 1px solid #fff;
+                color: #eee;
+                background-color: #4088b8;
+                font-weight: bold;
+            }
+            .jcarousel-control a:focus,
+            .jcarousel-control a:active {
+                outline: none;
+            }
+            .jcarousel-scroll {
+                margin-top: 10px;
+                text-align: center;
+            }
+            .jcarousel-scroll form {
+                margin: 0;
+                padding: 0;
+            }
+            .jcarousel-scroll select {
+                font-size: 75%;
+            }
+            #mycarousel-next,
+            #mycarousel-prev {
+                cursor: pointer;
+                margin-bottom: -10px;
+                text-decoration: underline;
+                font-size: 11px;
+            }
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript" src="jcarousel/lib/jquery.jcarousel.pack.js"></script>  
+        <link  href="jcarousel/lib/jquery.jcarousel.css" rel="stylesheet" type="text/css" />
+        <link href="jcarousel/skins/ie7/skin.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript">
+            //<![CDATA[
+            function mycarousel_initCallback(carousel) {
+                jQuery('.jcarousel-control a').bind('click', function() {
+                    carousel.scroll(jQuery.jcarousel.intval(jQuery(this).text()));
+                    return false;
+                });
+
+                jQuery('.jcarousel-scroll select').bind('change', function() {
+                    carousel.options.scroll = jQuery.jcarousel.intval(this.options[this.selectedIndex].value);
+                    return false;
+                });
+
+                jQuery('#mycarousel-next').bind('click', function() {
+                    carousel.next();
+                    return false;
+                });
+
+                jQuery('#mycarousel-prev').bind('click', function() {
+                    carousel.prev();
+                    return false;
+                });
+            };
+
+            jQuery(document).ready(function() {
+                jQuery("#mycarousel").jcarousel({
+                    scroll: 1,
+                    initCallback: mycarousel_initCallback,
+                    buttonNextHTML: null,
+                    buttonPrevHTML: null
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <h1>Carrossel com controles externos</h1>
+
+        <div id="mycarousel" class="jcarousel-skin-ie7">
+            <div class="jcarousel-control">
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+            </div>
+
+            <ul class="jcarousel-skin-ie7">
+                <li><img src="1_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+                <li><img src="2_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+                <li><img src="3_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+                <li><img src="4_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+                <li><img src="5_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+                <li><img src="6_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+                <li><img src="7_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+                <li><img src="8_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+                <li><img src="9_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+                <li><img src="10_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            </ul>
+
+            <div class="jcarousel-scroll">
+                <form action="">
+                    <a href="#" id="mycarousel-prev">&laquo; Anterior</a>
+                    <select>
+                        <option value="1">Scroll 1 item por click</option>
+                        <option value="2">Scroll 2 items por click</option>
+                        <option value="3">Scroll 3 items por click</option>
+                        <option value="4">Scroll 4 items por click</option>
+                        <option value="5">Scroll 5 items por click</option>
+                    </select>
+                    <a href="#" id="mycarousel-next">Próxima &raquo;</a>
+                </form>
+            </div>
+        </div>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #ccc;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-13.4a.html">&laquo; anterior</a> | <a href="arquivo-13.6a.html">próximo &raquo;</a></i>
+
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Seletor :image</title>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('button').click(function () {
+                    $(':image').css('border', '2px solid #ff0000');
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+        <button type="button">Bordas nos inputs imagem</button>
+
+        <form action="">
+            <p><label>input de texto: <input type="text" /></label></p>
+            <p><label>input de senha: <input type="password" /></label></p>
+            <p><label>input checkbox: <input type="checkbox" /></label></p>
+            <p><label>input radio: <input type="radio" /></label></p>
+            <p><label>input reset: <input type="reset" /></label></p>
+            <p><label>input image: <input type="image" src="ok.gif" /></label></p>
+            <p><label>input botao: <input type="button" /></label></p>
+        </form>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-2.2.8g.html">&laquo; anterior</a> | <a href="arquivo-2.2.8i.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+

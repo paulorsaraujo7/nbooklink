@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | attr(nome)</title>
+        <style type="text/css" media="all">
+            #resultado {
+                display:none;
+                width:300px;
+                padding:8px 12px; 
+                border:1px solid #000;
+                background:#ff0;
+            }
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('button').click(function () {
+                    var valorAtributo = $('h1').attr("title");
+                    $('#resultado').css('display', 'block').text('O valor do atributo title é: ' + valorAtributo);	
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+        <button type="button">Atributo</button>
+
+        <h1 title="logotipo">Cabeçalho nível 1 com atributo title="logotipo"</h1>
+        <p id="um">Primeiro parágrafo com atributo id="um"</p>
+        <p class="diferente">segundo parágrafo com atributo class="diferente"</p>
+        <p class="diferente">segundo parágrafo com atributo class="diferente"</p>
+
+        <div id="resultado"></div>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="../cap_02/arquivo-2.2.9c.html">&laquo; capítulo 2</a> | <a href="arquivo-3.1b.html">próximo &raquo;</a></i>
+
+    </body>
+</html>

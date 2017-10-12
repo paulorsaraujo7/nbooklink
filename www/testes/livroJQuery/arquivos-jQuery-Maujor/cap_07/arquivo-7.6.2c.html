@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Funções utilitárias</title>
+        <style type="text/css" media="all">
+            * {color: #999;}
+            p {margin:2px 0;}
+            form {display:inline;}
+            select {width:105px;}
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function() {
+                (function($) {
+                    $.corTexto = function(e) {
+                        var selecao = document.getElementById('selecionaCor');
+                        var indiceSelecao = selecao.selectedIndex;
+                        sel = selecao.options[indiceSelecao].value; 				
+			
+                        var el = document.getElementsByTagName(e);
+                        for( var i = 0; i < el.length; i++) {
+                            el[i].style.color = sel;
+                        }
+                    }
+
+                })(jQuery);
+		
+                $('button:eq(0)').click(function() {		
+                    $.corTexto('p');
+                });
+	
+                $('button:eq(1)').click(function() {		
+                    jQuery.corTexto('h2');
+                });
+	
+                $('button:eq(2)').click(function() {		
+                    $.corTexto('li');
+                });
+	
+                $('button:eq(3)').click(function() {		
+                    jQuery.corTexto('*');
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <form action="" method="get">
+            <label>Escolha uma cor<br />
+                <select id="selecionaCor">
+                    <option value="#999999">Default</option>
+                    <option value="#FF0000">Vermelha</option>
+                    <option value="#0000FF">Azul</option>
+                    <option value="#00CC00">Verde</option>
+                    <option value="#FF00FF">Pink</option>
+                </select>
+            </label>
+        </form>
+        <button type="button">Parágrafos</button>
+        <button type="button">Cabeçalhos</button>
+        <button type="button">Listas</button>
+        <button type="button">Tudo</button>
+        <h2>Cabeçalho nível 2</h2>
+        <p>Parágrafo um</p>
+        <p>Parágrafo dois</p>
+        <p>Parágrafo três</p>
+        <h2>Cabeçalho nível 2</h2>
+        <ul>
+            <li>Item um</li>
+            <li>Item dois</li>
+            <li>Item três</li>
+        </ul>
+        <p>Parágrafo</p>
+        <h2>Cabeçalho nível 2</h2>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-7.6.2b.html">&laquo; anterior</a> | <a href="arquivo-7.6.2d.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+
+

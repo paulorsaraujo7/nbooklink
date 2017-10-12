@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Plugins</title>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            (function($) {	
+                $.fn.aplicaEstilos = function() {
+                    var defaults = {
+                        largura: 400,
+                        altura: 250,
+                        corFundo: '#000',
+                        corFrente: '#0f0'
+                    }
+		
+                    return this.each(function() {
+                        $(this).css({
+                            width: defaults.largura,
+                            height: defaults.altura,
+                            backgroundColor: defaults.corFundo,
+                            color: defaults.corFrente
+                        })
+                        .append('Recarregue a página para repetir a aplicação de estilos');
+                    });
+                };
+            })(jQuery)	
+            $(document).ready(function() {
+                $('button:eq(0)').click(function() {
+                    $('div').aplicaEstilos();
+                });
+            })
+            // ]]>
+        </script>
+    </head>
+    <body>
+        <h1>Plug-in - Exemplo 1</h1> 
+        <button type="button">Aplicar estilos</button><br /><br />
+        <div></div>
+
+        <i style="display:block; font-style:normal; margin:50px 0; border-top:1px dotted #ccc;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-13.10.2f.html">&laquo; anterior</a> | <a href="arquivo-13.10.3b.html">próximo &raquo;</a></i>
+    </body>
+</html>

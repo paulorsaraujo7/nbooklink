@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | CSS</title>
+        <style type="text/css" media="all">
+            div, p {height:50px; background:#0f0; padding:0 20px; }
+            div { width:275px;}
+            p {width: 20em;}
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('button').click(function () {		
+		
+                    var larguraDiv = $('div').width(); 
+                    $('div').after('A largura do div é de: ' + larguraDiv + ' px');
+			
+                    var larguraPara = $('p').width(); 
+                    $('p').after('A largura do parágrafo é de: ' + larguraPara + ' px');
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+        <button type="button">Larguras</button><br />	
+        <div>DIV para determinar a largura.</div><br />
+        <p>Texto de um parágrafo para determinação da largura.</p>
+
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-4.2e.html">&laquo; anterior</a> | <a href="arquivo-4.3b.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+

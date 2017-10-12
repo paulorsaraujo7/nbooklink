@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Imagens e galerias de fotos</title>
+        <style type="text/css" media="all">
+            body {
+                margin:20px 0;
+                padding:0;
+                background:#d6e2e5;
+            }
+            #tudo {
+                width:600px;
+                font: 80%/1.2 Arial, Helvetica, sans-serif;
+                margin:0 auto;
+                padding:0 20px;
+                color:#666;
+                background:#fff;
+                border:1px dotted #999;
+            }
+            .foto{border:none;margin:10px;}
+            .left {float:left;}
+            .right {float:right;}
+            /* CSS para efeitos jQuery  */
+            #mascara {
+                position:absolute;
+                background:#000;
+                z-index:1;
+                top:0;
+            }
+            .foto-ampliada {
+                width: 500px;
+                height: 375px;
+                position:absolute;
+                z-index:2;
+                cursor:pointer;
+                border:5px solid #999;
+            }
+            /* Fim CSS para efeitos jQuery */
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function() {
+                $('<div id="mascara"></div>')
+                .css({
+                    opacity : 0.8,
+                    width : $(document).width(),
+                    height : $(document).height()
+                })
+                .appendTo('body').hide();
+                $('.foto').click(function(event) {
+                    event.preventDefault();
+                    $('#mascara').fadeIn(1000);
+                    $('<img class="foto-ampliada" />')
+                    .attr('src', $(this).attr('src'))
+                    .css({
+                        left: ($(document).width()/2 - 250),
+                        top: ($(document).height()/2 - 186)
+                    }).appendTo('body').click(function(){
+                        $(this).fadeOut(1000);
+                        $('#mascara').fadeOut(1500);
+                    });
+                });	
+            });
+            // ]]>
+        </script>
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Página com fotos</h1>
+            <p><a href="1.jpg"><img src="1.jpg" alt="Descrição da foto" width="120" height="90" class="foto left" /></a>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eleifend, purus quis laoreet faucibus, ante augue malesuada mi, id rhoncus augue lorem eget elit. Ut sollicitudin sodales purus. Phasellus libero felis, blandit nec, commodo ut, imperdiet ut, nibh. Suspendisse potenti. Donec ullamcorper cursus dolor. Duis vitae ipsum. Maecenas dapibus hendrerit diam. Morbi varius, massa id pretium accumsan, nunc lorem congue libero, ut euismod metus libero id nulla. Duis posuere odio sed velit vulputate venenatis. Suspendisse et dui ac metus auctor fringilla. Curabitur interdum augue a pede.</p>
+
+            <p><a href="9.jpg"><img src="9.jpg" alt="Descrição da foto" width="100" height="75" class="foto right" /></a>Curabitur hendrerit erat ut augue. Cras gravida. Mauris consequat aliquam leo. Aenean non tortor id metus aliquet consectetuer. Quisque sodales lectus ac orci.</p>
+            <p><a href="10.jpg"><img src="10.jpg" alt="Descrição da foto" width="120" height="90" class="foto left" /></a>Donec eleifend fringilla mi. Vivamus vel massa. Aenean interdum pellentesque sem. Nulla pellentesque felis et tortor. Duis cursus, dui non dictum tincidunt, wisi ipsum mollis wisi, nec ornare velit ipsum eget enim. In sed felis. Phasellus condimentum sodales nulla. Etiam orci leo, rutrum malesuada, congue vel, fringilla vitae, lorem. Pellentesque ligula.</p>
+
+            <p style="text-align:right;"><strong>Clique qualquer foto.</strong></p>
+
+            <i style="display:block; font-style:normal; margin:50px 0; border-top:1px dotted #ccc;
+               padding-top:5px;">Arquivos exemplo: <a href="arquivo-12.2d.html">&laquo; anterior</a> | <a href="arquivo-12.3.1a.html">próximo &raquo;</a></i>
+
+        </div>
+    </body>
+</html>

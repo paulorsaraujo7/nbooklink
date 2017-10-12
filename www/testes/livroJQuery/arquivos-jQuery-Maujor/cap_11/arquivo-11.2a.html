@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Formulários</title>
+        <style type="text/css" media="all">
+            body {
+                width:600px;	
+                font: 80%/1.2 Arial, Helvetica, sans-serif;
+                margin:30px auto;
+                padding:0;
+                color:#666;
+            }
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function() {
+                var textoDefault = $('#formulario label').remove().text();
+                $('#busca')
+                .val(textoDefault)
+                .css('color', '#999')
+                .focus(function(){
+                    if ($(this).val() == textoDefault){
+                        $(this).css('color', '').val('');
+                    }
+                }).blur(function(){
+                    if ($(this).val() == '' ){
+                        $(this).val(textoDefault).css('color', '#999');
+                    }
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <form action="" method="get" id="formulario"> 
+            <label for="busca">Busca</label>
+            <input name="busca" type="text" id="busca" />
+        </form>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #ccc;
+           padding-top:5px;">Arquivos exemplo: <a href="../cap_10/arquivo-10.6b.html">&laquo; capítulo 10</a> | <a href="arquivo-11.2b.html">próximo &raquo;</a></i>
+
+    </body>
+</html>

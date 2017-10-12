@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Notícias</title>
+        <style type="text/css" media="all">
+            body {
+                width:400px;	
+                font: 12px/1.2 Arial, Helvetica, sans-serif;
+                margin:10px auto 0 auto;
+                padding:0;
+            }
+            h1 {
+                width:415px;
+                color:#c60;
+                font-size:20px;
+                padding-left:5px;
+                border-bottom:1px solid #c60;
+            }
+            h2 {
+                color:#c60;
+                font-size:16px;
+                margin:8px 0 5px 0;
+            }
+            p {
+                text-align:justify;
+                margin:0 0 8px 0;
+            }
+            div.noticias {
+                width:400px;
+                background:#cff;
+                padding:0 10px 5px 10px;
+                margin-bottom:20px;
+                border:1px dotted #333;
+            }
+            /* CSS para efeito jQuery */
+            .sm, .fe {
+                text-decoration:none;
+                color:#069;
+                margin-left:10px;
+            }
+            .fe {float:right;
+                 display:none;
+                 margin-top:10px;
+            }
+            /* Fim CSS para efeito jQuery */
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function() {
+                $('.noticias *:not(h2.tit)').hide();
+                $('.noticias h2.tit').after('<a href="#" class="sm"> [Saiba mais]</a>');	
+                $('.noticias').prepend('<a href="#" class="fe">Fechar X</a>');	
+                var a  = [];
+                $('span').each(function(j) {
+                    a.push($(this).text());
+                    $('.noticias h2.tit:eq('+ j +')').after(a[j]);
+                })
+		
+                $('.sm').click(function(event) {
+                    event.preventDefault();
+                    $(this).parents('.noticias').children().fadeIn(1500);
+                    $(this).parents('.noticias').css('background', '#b9e8d1');
+                    $(this).parents('.noticias').siblings('.noticias').children('*:not(h2.tit, .sm)').hide();
+                    $(this).parents('.noticias').siblings('.noticias').css('background', '#cff');
+                    $('.sm').text('[Saiba mais]');
+                    $(this).text('');
+                }); 
+	
+                $('.fe').click(function(event) {
+                    event.preventDefault();
+                    $(this).parent().children('*:not(h2.tit, .sm)').hide();
+                    $(this).parent().css('background', '#cff');
+                    $('.sm').text('[Saiba mais]');
+                }); 
+            });
+            // ]]>
+        </script>
+    </head>
+    <body>
+        <h1>Notícias</h1>
+        <div class="noticias">
+            <h2 class="tit">Notícia um</h2> 
+            <p><span>Texto da primeira notícia. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span> Morbi eleifend, purus quis laoreet faucibus, ante augue malesuada mi, id rhoncus augue lorem eget elit.</p>
+            <p> Ut sollicitudin sodales purus. Phasellus libero felis, blandit nec, commodo ut, imperdiet ut, nibh. Suspendisse potenti. Donec ullamcorper cursus dolor. Duis vitae ipsum. Maecenas dapibus hendrerit diam. Morbi varius, massa id pretium accumsan, nunc lorem congue libero, ut euismod metus libero id nulla. Duis posuere odio sed velit vulputate venenatis. Suspendisse et dui ac metus auctor fringilla. Curabitur interdum augue a pede.</p>
+        </div>
+        <div class="noticias">
+            <h2 class="tit">Notícia dois</h2>   
+            <p><span>Texto da segunda notícia. Ut sollicitudin sodales purus. Phasellus libero felis, blandit nec, commodo ut, imperdiet ut, nibh.</span> Suspendisse potenti. Donec ullamcorper cursus dolor. Duis vitae ipsum. Maecenas dapibus hendrerit diam. Morbi varius, massa id pretium accumsan, nunc lorem congue libero, ut euismod metus libero id nulla. </p>
+            <p>Duis posuere odio sed velit vulputate venenatis. Suspendisse et dui ac metus auctor fringilla. Curabitur interdum augue a pede.</p>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eleifend, purus quis laoreet faucibus, ante augue malesuada mi, id rhoncus augue lorem eget elit.</p>
+        </div>
+        <div class="noticias">
+            <h2 class="tit">Notícia três</h2>  
+            <p><span>Texto da terceira notícia. Curabitur hendrerit erat ut augue. Cras gravida.</span> Mauris consequat aliquam leo. Aenean non tortor id metus aliquet consectetuer. Quisque sodales lectus ac orci.</p>
+            <p> Donec eleifend fringilla mi. Vivamus vel massa. Aenean interdum pellentesque sem. Nulla pellentesque felis et tortor. Duis cursus, dui non dictum tincidunt, wisi ipsum mollis wisi, nec ornare velit ipsum eget enim. In sed felis. Phasellus condimentum sodales nulla. Etiam orci leo, rutrum malesuada, congue vel, fringilla vitae, lorem. Pellentesque ligula.</p>
+        </div>    
+        <div class="noticias">
+            <h2 class="tit">Notícia quatro</h2>  
+            <p><span>Texto da quarta notícia. Donec eleifend fringilla mi. Vivamus vel massa. Aenean interdum pellentesque sem.</span> Nulla pellentesque felis et tortor. Duis cursus, dui non dictum tincidunt, wisi ipsum mollis wisi, nec ornare velit ipsum eget enim. In sed felis. Phasellus condimentum sodales nulla.</p> 
+            <p>Etiam orci leo, rutrum malesuada, congue vel, fringilla vitae, lorem. Pellentesque ligula. Curabitur hendrerit erat ut augue. Cras gravida. Mauris consequat aliquam leo. Aenean non tortor id metus aliquet consectetuer. Quisque sodales lectus ac orci.</p>
+        </div>
+        <p style="margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-9.2b.html">&laquo; anterior</a> | <a href="../cap_10/arquivo-10.3a.html">capítulo 10 &raquo;</a></p>
+
+    </body>
+</html>
+

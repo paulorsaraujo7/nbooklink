@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Funções utilitárias</title>
+        <style type="text/css" media="all">
+            .msg {color:#f00;}
+        </style>
+
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function() {
+                $('button:eq(0)').click(function() {
+                    var nome = $('input:eq(0)').val();
+                    var email = $('input:eq(1)').val();
+                    var cpf = $('input:eq(2)').val();
+                    $('div').data('dados', {Nome: nome, Email: email, CPF: cpf});
+	
+                    if (nome && email && cpf) {	
+                        $('.msg').text('Dados armazenados com sucesso!');
+                    }else{
+                        $('.msg').text('Preencha todos os campos!');
+                    }
+                })
+		
+                $('button:eq(1)').click(function() {
+                    var mensagem = '<p>Dados recuperados:</p>'
+                    mensagem += 'Nome: ' + $('div').data('dados').Nome + '<br />'
+                    mensagem += 'Email: ' + $('div').data('dados').Email + '<br />' 
+                    mensagem += 'CPF: ' + $('div').data('dados').CPF 
+                    $('.msg').html(mensagem);
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+
+        <p>Entre os dados a armazenar</p>
+        Nome:<br /> <input type="text" /><br />
+        Email:<br /> <input type="text" /><br />
+        CPF:<br /> <input type="text" /><br />
+
+        <button type="button">Armazenar dados</button><br />
+        <button type="button">Recuperar dados</button>
+
+        <div></div>
+        <p class="msg"></p>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-7.6.2.1b.html">&laquo; anterior</a> | <a href="arquivo-7.7b.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Plugins</title>
+        <style type="text/css" media="all">
+            body {
+                width:500px;	
+                font: 80%/1.2 Arial, Helvetica, sans-serif;
+                color:#666;
+                margin:30px auto;
+                padding:0;
+            }
+            h1 {font-size:16px;}
+            hr {margin:20px;}
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript" src="jcarousel/lib/jquery.jcarousel.pack.js"></script>  
+        <link  href="jcarousel/lib/jquery.jcarousel.css" rel="stylesheet" type="text/css" />
+        <link href="jcarousel/skins/ie7/skin.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript">
+            //<![CDATA[
+            function mycarousel_initCallback(carousel) {
+                // Desabilita o autoscroll se for clicada uma seta manual.
+                carousel.buttonNext.bind('click', function() {
+                    carousel.startAuto(0);
+                });
+                carousel.buttonPrev.bind('click', function() {
+                    carousel.startAuto(0);
+                });
+
+                // Desabilita o autoscroll com o mouse sobre uma imagem.
+                carousel.clip.hover(function() {
+                    carousel.stopAuto();
+                }, function() {
+                    carousel.startAuto();
+                });
+            };
+            jQuery(document).ready(function() {
+                jQuery('#cscroll').jcarousel({
+                    auto: 1,
+                    wrap: 'last',
+                    initCallback: mycarousel_initCallback
+                });
+
+
+                jQuery('#cscroll-2').jcarousel({
+                    auto: 1.5,
+                    wrap: 'last',
+                    buttonNextHTML: null, 
+                    buttonPrevHTML: null, 
+                    initCallback: mycarousel_initCallback
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <h1>Carrossel com scroll automático e controle manual</h1>
+        <ul id="cscroll" class="jcarousel-skin-ie7">
+            <li><img src="1_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="2_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="3_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="4_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="5_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="6_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="7_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="8_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="9_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="10_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+        </ul>
+
+        <hr />
+
+        <h1>Carrossel com scroll automático sem controle manual</h1>
+        <ul id="cscroll-2" class="jcarousel-skin-ie7">
+            <li><img src="1_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="2_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="3_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="4_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="5_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="6_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="7_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="8_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="9_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+            <li><img src="10_s.jpg" alt="Descrição da foto" width="75" height="75" /></li>
+        </ul>
+
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #ccc;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-13.3a.html">&laquo; anterior</a> | <a href="arquivo-13.5a.html">próximo &raquo;</a></i>
+
+    </body>
+</html>

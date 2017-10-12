@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Formulários</title>
+        <style type="text/css" media="all">
+            body {
+                width:600px;	
+                font: 80%/1.2 Arial, Helvetica, sans-serif;
+                margin:30px auto;
+                color:#666;
+                padding:0;
+            }
+            label {
+                width:190px;
+                display:block;
+                float:left;
+            }
+            fieldset{border:1px solid #ccc;padding:10px;}
+            legend {
+                font-weight:bold;
+                border:1px solid #ccc;
+                padding:1px 4px; 
+            }
+            label.fabricante {
+                font-weight:bold;
+                margin:0;
+            }
+            form div {margin:15px 0 0 0;}
+            .mudar, .fabricante {
+                width:100%;
+                overflow:auto;
+            }
+            .mudar{background:#d6e2e5;}
+            .fabricante{background:#add6ef;padding:10px 0;}
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function() {
+                $(':checkbox').parents('label').hide();
+                $(':radio').wrap('<a href="#"></a>');
+                $(':radio').parents('label').click(function(){
+                    $(this).siblings().fadeIn(1500); 
+                    $(this).parent().siblings('.mudar')
+                    .children('label:not(.fabricante)')
+                    .slideUp().find(':checked').each(function(){
+                        $(this).removeAttr('checked');
+                    });
+                });
+            });
+            // ]]>
+        </script>
+    </head>
+    <body>
+        <form action="" method="get" id="formulario"> 
+            <fieldset>
+                <legend>Selecione um fabricante e escolha os modelos de sua preferência.</legend>
+                <div class="mudar">
+                    <label class="fabricante"><input type="radio" name="fabricante"  />Mercedes Benz</label>
+                    <label><input type="checkbox" />Classe A - Hacthback</label>
+                    <label><input type="checkbox" />Classe B - MPV</label>
+                    <label><input type="checkbox" />Classe C - Sedã </label>
+                    <label><input type="checkbox" />Classe SLK - Roadster</label>
+                    <label><input type="checkbox" />Classe CL - Coupé</label>
+                    <label><input type="checkbox" />Classe CLK - Coupé</label>
+                    <label><input type="checkbox" />Classe CLK - Cabriolet</label>
+                    <label><input type="checkbox" />Classe M - Sport Utility</label>
+                    <label><input type="checkbox" />Classe R - Crossover</label>
+                </div>
+
+                <div class="mudar">
+                    <label class="fabricante"><input type="radio" name="fabricante" />Ferrari</label>
+                    <label><input type="checkbox" />599 GTB</label>
+                    <label><input type="checkbox" />California 2009</label>
+                    <label><input type="checkbox" />250 GT SWB</label>
+                    <label><input type="checkbox" />F430 Scuderia</label>
+                    <label><input type="checkbox" />Mastretta MXT</label>
+                    <label><input type="checkbox" />612 Scaglietti </label>
+                    <label><input type="checkbox" />FXX Evolution</label>
+                    <label><input type="checkbox" />Ferrari 612 top car</label>
+                    <label><input type="checkbox" />P4/5</label>
+                </div>
+
+                <div class="mudar">
+                    <label class="fabricante" ><input type="radio" name="fabricante" />Volvo</label>
+                    <label><input type="checkbox" />S40</label>
+                    <label><input type="checkbox" />S60</label>
+                    <label><input type="checkbox" />S80</label>
+                    <label><input type="checkbox" />V50</label>
+                    <label><input type="checkbox" />XC70</label>
+                    <label><input type="checkbox" />XC90</label>
+                    <label><input type="checkbox" />C30</label>
+                    <label><input type="checkbox" />C70</label>
+                </div>
+            </fieldset>
+        </form>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #ccc;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-11.4b.html">&laquo; anterior</a> | <a href="arquivo-11.6a.html">próximo &raquo;</a></i>
+
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Funções utilitárias</title>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function(){
+                $('.versao').click(function () {		
+                    var $versaoNavegador = $.browser.version;
+                    $('p').append('A versão da engine de renderização deste navegador é: <b>' + $versaoNavegador + '</b><br />');
+		
+                    if (jQuery.browser.mozilla){
+                        $('p').append('Este navegador pertence à família: <b>Mozilla</b><br />')}
+                    else if (jQuery.browser.msie){
+                        $('p').append('Este navegador pertence à família: <b>Microsoft Internet Explorer</b><br />')}
+                    else if (jQuery.browser.safari){
+                        $('p').append('Este navegador pertence à família: <b>Safari</b><br />')}
+                    else if (jQuery.browser.opera){
+                        $('p').append('Este navegador pertence à família: <b>Opera</b><br />')
+                    } else {
+                        $('p').append('Não foi possível identificar a que família pertence este navegador.')};
+                });
+		
+                $('.reset').click(function () {		
+                    $('p').empty();
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <button type="button" class="versao">Flags deste navegador</button>	
+        <button type="button" class="reset">Reset</button><br />	
+        <p></p>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="../cap_06/arquivo-6.5j.html">&laquo; capítulo 6</a> | <a href="arquivo-7.2b.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+
+

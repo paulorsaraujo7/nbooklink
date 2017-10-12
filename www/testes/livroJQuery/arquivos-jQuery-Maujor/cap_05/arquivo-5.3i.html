@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Eventos</title>
+        <style type="text/css" media="all">
+            h2{font-size:18px;}
+            p {color:#f00;background:#ff0;}
+            #um, #dois, #tres, #quatro {width:280px;padding:0 10px;border:1px solid #000;float:left;margin:10px 30px 20px 0;}
+            .clear{clear:both;}
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function(){
+                $('#um li').click(function() {
+                    $('<p>Parágrafo inserido no DOM</p>').appendTo('#um');
+                });
+                $('#dois li').click(function() {
+		
+                    $('#um li').trigger('click');
+                });
+	
+                $('#tres li').click(function() {
+                    $('<p>Parágrafo inserido no DOM</p>').appendTo('#tres');
+                });
+                $('#quatro li').click(function() {
+		
+                    $('#tres li').triggerHandler('click');
+                });
+            })
+            // ]]>	
+        </script>
+    </head>
+    <body>
+
+        <h2>Com trigger()</h2>
+        <div id="um">
+            <span>Lista um - Clique qualquer item da lista.</span>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>	
+                <li>Item 3</li>	
+                <li>Item 4</li>	
+                <li>Item 5</li>	
+            </ul>
+        </div>
+
+        <div id="dois">
+            <span>Lista dois - Clique qualquer item da lista.</span>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>	
+                <li>Item 3</li>	
+                <li>Item 4</li>	
+                <li>Item 5</li>	
+            </ul>
+        </div>
+
+        <div class="clear"></div>
+
+        <h2>Com triggerHandler()</h2>
+
+        <div id="tres">
+            <span>Lista tr&ecirc;s - Clique qualquer item da lista.</span>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>	
+                <li>Item 3</li>	
+                <li>Item 4</li>	
+                <li>Item 5</li>	
+            </ul>
+        </div>
+
+        <div id="quatro">
+            <span>Lista quatro - Clique qualquer item da lista.</span>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>	
+                <li>Item 3</li>	
+                <li>Item 4</li>	
+                <li>Item 5</li>	
+            </ul>
+        </div>
+        <div class="clear"></div>
+
+        <span><b>Instruções:</b><br />
+            1-) Clique qualquer item na seguinte ordem: lista dois e lista quatro. Observe a diferença e recarregue a página<br />
+            2-) Clique qualquer item na seguinte ordem: lista um, lista três, lista dois, lista quatro. Recarregue a página e continue suas experiências com cliques aleatórios.</span>
+
+
+
+
+        </p>
+
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-5.3h.html">&laquo; anterior</a> | <a href="arquivo-5.4a.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+

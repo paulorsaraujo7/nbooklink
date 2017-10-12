@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Seletor :selected</title>
+        <style type="text/css" media="all">
+            b{color:#c30;}
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[ 
+            $(document).ready(function(){
+                $('select').change(function () {
+                    $('span').empty();
+                    $('option:selected').each(function(){
+                        $('span').append('Você selecionou: <b>' + $(this).text() + '</b><br />');
+                    });
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <form action="" method="get">
+            <p><label>Selecione um estado:<br /><select multiple="multiple">
+                        <option>Amazonas</option>
+                        <option>Acre</option>
+                        <option>Ceará</option>
+                        <option>Espirito Santo</option>
+                        <option>Goiás</option>
+                    </select></label></p>
+        </form>
+        <span></span>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-2.2.9b.html">&laquo; anterior</a> | <a href="../cap_03/arquivo-3.1a.html">capítulo 3 &raquo;</a></i>
+
+    </body>
+</html>
+

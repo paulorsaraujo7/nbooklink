@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Função jQuery(expressão, [contexto])</title>
+        <style type="text/css" media="all">
+            div {
+                width:200px;
+                height:100px;
+                border:1px solid #000;
+                margin:20px;
+            }
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#diferente').css('background', 'red');
+                $('p', $('#container')).css('color', 'green')
+            });
+        </script>
+    </head>
+    <body>
+
+        <div></div>
+        <div id="diferente"></div>
+        <div></div>
+
+        <div id="container">
+            <p>Parágrafo dentro da div#container</p>
+        </div>
+        <p>Parágrafo fora da div#container</p>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo:<a href="../cap_01/arquivo-1.1.6.1b.html"> &laquo; capítulo 1</a> | <a href="arquivo-2.1b.html">próximo &raquo;</a></i>
+
+    </body>
+</html>

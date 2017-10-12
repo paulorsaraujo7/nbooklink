@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Funções utilitárias</title>
+        <style type="text/css" media="all">
+            p {color: #999;}
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function() {
+                (function($) {
+                    $.corTexto = function(e) {
+                        var selecao = document.getElementById('selecionaCor');
+                        var indiceSelecao = selecao.selectedIndex;
+                        sel = selecao.options[indiceSelecao].value; 				
+			
+                        var el = document.getElementsByTagName(e);
+                        for( var i = 0; i < el.length; i++) {
+                            el[i].style.color = sel;
+                        }
+                    }
+                })(jQuery);
+                $('#selecionaCor').change(function() {		
+                    $.corTexto('p');
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <form action="" method="get">
+            <label>Escolha uma cor para os parágrafos<br />
+                <select id="selecionaCor">
+                    <option value="#999999">Default</option>
+                    <option value="#FF0000">Vermelha</option>
+                    <option value="#0000FF">Azul</option>
+                    <option value="#00CC00">Verde</option>
+                </select>
+            </label>
+        </form>
+        <p>Parágrafo um</p>
+        <p>Parágrafo dois</p>
+        <p>Parágrafo três</p>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-7.6.2a.html">&laquo; anterior</a> | <a href="arquivo-7.6.2c.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+
+

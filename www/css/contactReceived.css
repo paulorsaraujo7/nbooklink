@@ -1,0 +1,38 @@
+
+#divConteudoUnicoContactReceived
+{
+    position:relative; 
+    top: 10px; 
+    width: 980px;
+    height: 160px; 
+    line-height: 20px; 
+}
+
+#imgRespostaOKContactReceived
+{
+    position: absolute; 
+    top: 10px;
+}
+
+#divTextoRespostaContactReceived
+{
+    position: absolute; 
+    left: 70px; 
+    top: 10px; 
+    width: 300px;
+}
+
+#linkEnviarOutraMensagemContactReceived
+{
+    position: relative; 
+    top:130px; 
+    left: 70px;     
+}
+
+#linkIrParaHomePageContactReceived
+{
+    position: relative; 
+    top:130px; 
+    left: 90px;
+}
+

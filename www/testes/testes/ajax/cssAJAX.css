@@ -1,0 +1,23 @@
+/* 
+    Document   : cssAJAX
+    Created on : 30/06/2012, 01:40:25
+    Author     : paulo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+#divResposta
+{
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+.visivel { 
+    display: block;
+}
+
+.naoVisivel { 
+    display: none;
+}

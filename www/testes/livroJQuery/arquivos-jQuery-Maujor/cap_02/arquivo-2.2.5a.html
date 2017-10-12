@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Seletor :hidden</title>
+        <style type="text/css" media="all">
+            h1 {display:none;}
+        </style>
+
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('button').click(function () {
+                    var totalOcultos = $(':hidden', $('body')).length;
+                    var inputOcultos = $('input:hidden').length;
+	
+                    $('span').text('Foram encontrados ' + totalOcultos + ' elementos ocultos, sendo ' + inputOcultos + ' elementos input do tipo hidden.') /* escrever o resultado */  	
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+        <button type="button">Ocultos</button>
+
+        <h1>Cabeçalho oculto por declaração CSS</h1>
+        <form>
+            <input type="hidden" />
+            <input type="hidden" />
+        </form>
+
+        <span></span> <!--aqui jQuery escreve os resultados de elementos ocultos encontrados -->
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-2.2.4d.html">&laquo; anterior</a> | <a href="arquivo-2.2.5b.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | $('elemento')</title>
+        <style type="text/css" media="all">
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function() {
+                $('button:eq(1)').css('display', 'none');
+                $('button:eq(0)').click(function() {		
+                    $(this).css('display', 'none');
+                    $('button:eq(1)').css('display', 'block');
+                    $('<div>',
+                    {
+                        css: {
+                            height: '150px',
+                            width: '150px',
+                            position: 'absolute',
+                            left: '50%',
+                            top: '50%',
+                            background: '#f00',
+                            border: '2px solid #000'
+                        },
+                        mouseover: function() {
+                            $(this).css('background', '#fff');
+                        },
+                        mouseout: function() {
+                            $(this).css('background', '#f00');
+                        }
+                    }).appendTo('#container');
+                });	
+                $('button:eq(1)').click(function() {		
+                    $(this).css('display', 'none');
+                    $('#container').empty();
+                    $('button:eq(0)').css('display', 'block');
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <button type="button">Criar div e inserir no DOM</button>	
+        <button type="button">Retirar div do DOM</button>	
+        <div id="container"></div>
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-3.6t.html">&laquo; anterior</a> | <a href="../cap_04/arquivo-4.1a.html">capítulo 4 &raquo;</a></i>
+
+    </body>
+</html>

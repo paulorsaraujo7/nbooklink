@@ -1,0 +1,54 @@
+/* 
+    Document   : CSS of page privacyPolice
+    Created on : 28/06/2013, 21:08:27
+    Author     : NBookLink
+    Description:
+        Definitions CSS of page privacyPolice.
+*/
+
+#divConteudoUnico
+{
+    position:relative; 
+    top: 10px; 
+    width: 980px;
+    height: auto;
+    line-height:20px; 
+}
+
+
+#linkIrParaHomePage
+{
+    position: relative; 
+    top:130px; 
+    left: 90px;
+}
+
+#imgPrivacyPolice
+{
+    position: absolute; 
+    top: 10px;
+}
+
+#divTextoPrivacyPolice
+{
+    position: relative; 
+    left: 70px; 
+    top: 10px; 
+    width: 400px;
+    line-break: auto;
+}
+
+#linkIrParaHomePagePrivacyPolice
+{
+    position: relative; 
+    left: 70px;
+}
+
+.letraEmDestaque
+{
+    font-weight: bold;
+}
+
+
+
+

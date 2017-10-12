@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Efeitos</title>
+        <style type="text/css" media="all">
+            div {
+                position:absolute;
+                width:80px; 
+                height:80px;
+                left:10px;
+                top:100px;
+                border:2px solid #000;
+                background:#f00; 
+            }
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function(){
+                $('button:eq(0)').click(function(){
+                    $('div').animate({left: '+=1000px'}, 8000);
+                });
+
+                $('button:eq(1)').click(function(){
+                    $('div').stop();
+                });
+
+                $('button:eq(2)').click(function(){
+                    $('div').animate({left: '-=1000px'}, 8000);
+                });
+                $('button:eq(3)').click(function(){
+                    $('div').css({left:'10px'});
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>	
+        <button type="button">Animar</button>
+        <button type="button">Parar</button>
+        <button type="button">Voltar</button>
+        <button type="button">Reset</button>
+        <div></div>
+
+        <i style="display:block; font-style:normal; margin-top:180px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-6.4a.html">&laquo; anterior</a> | <a href="arquivo-6.5a.html">próxima &raquo;</a></i>
+
+    </body>
+</html>
+

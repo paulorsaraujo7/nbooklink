@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Formulários</title>
+        <style type="text/css" media="all">
+            body {
+                width:600px;	
+                font: 80%/1.2 Arial, Helvetica, sans-serif;
+                margin:30px auto;
+                padding:0;
+                color:#666;
+            }
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function() {
+                $('.dica + span')
+                .css({display: 'none',
+                    border: '1px solid #add6ef',
+                    padding: '2px 4px',
+                    background: '#d6e2e5',
+                    marginLeft: '10px'
+                });
+                $('.dica').focus(function() {
+                    $(this).next().fadeIn(1500);
+                }).blur(function() {
+                    $(this).next().fadeOut(1500);
+                });		
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <form action="" method="get" id="formulario"> 
+            <label for="cpf">CPF</label><br />
+            <input name="cpf" type="text" id="cpf"  class="dica" /> <span>Somente números</span><br />
+            <label for="data">Data</label><br />
+            <input name="data" type="text" id="data" class="dica" /> <span>dd/mm/yyyy</span>
+        </form>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #ccc;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-11.2b.html">&laquo; anterior</a> | <a href="arquivo-11.4a.html">próximo &raquo;</a></i>
+
+    </body>
+</html>

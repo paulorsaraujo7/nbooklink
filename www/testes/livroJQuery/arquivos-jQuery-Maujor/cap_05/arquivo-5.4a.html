@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Eventos</title>
+        <style type="text/css" media="all">
+            div {
+                width:320px; 
+                margin:20px 0;
+                height:120px;
+                border:2px solid #000;
+                background:#ffc; 
+            }
+
+            .rt {
+                width:320px; 
+                margin:20px 0;
+                height:160px;
+                border:2px solid #000;
+                background:#ff0; 
+            }
+            .rt blockquote {
+                margin:10px 0 10px 10px;
+                width:200px;
+                padding-bottom:50px;
+                padding-top:10px;
+                background:#f00;
+            }
+            .rt p {
+                width:200px;
+                text-align:right;
+                padding:10px 0 10px 0;
+                margin:0;
+                background:#0f0;
+            }
+            .rt span {
+                background:#fff;
+                padding:10px;
+            }
+            .msg {
+                width:305px;
+                padding:8px 10px;
+                background:#000;
+                color:#fff;
+            }
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function(){
+                $('a').eq(0).click(function(event) {
+                    $('.msg').text('Tipo de evento: ' + event.type);
+                });
+	
+                $('a[href=http://www.maujor.com]').click(function(event) {
+                    event.preventDefault();
+                    alert(event.target);
+                });
+		
+                $('a.ct').click(function(event) {
+                    $('.msg').text('event.currentTarget = this?: ' + (event.currentTarget === this) );
+                });
+		
+                $('.rt span').mouseout(function(event) {
+                    $('.msg').text('Elemento para event.relatedTarget: ' + event.relatedTarget.nodeName);
+                });
+		
+                $('.xy').click(function(event) {
+                    $('.msg').text('Você clicou na posição: x = ' + event.pageX + " px, y =  " + event.pageY +' px' );
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <a href="#">Clique aqui para revelar event.type</a><br />
+        <a href="http://www.maujor.com">Clique aqui para revelar event.target</a><br />
+        <a href="#" class="ct">Clique aqui para comprovar event.currentTarget</a>
+
+        <div class="rt">Div
+            <blockquote>Blockquote
+                <p>Parágrafo com <span>SPAN</span></p>
+            </blockquote>
+        </div>
+
+        <div class="xy">Clique dentro deste retângulo para revelar event.pageX/Y</div>
+
+        <p class="msg"></p>
+
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-5.3i.html">&laquo; anterior</a> | <a href="arquivo-5.4b.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+

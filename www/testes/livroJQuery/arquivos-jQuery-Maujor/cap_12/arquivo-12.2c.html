@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Imagens e galerias de fotos</title>
+        <style type="text/css" media="all">
+            body {
+                width:500px;	
+                font: 80%/1.2 Arial, Helvetica, sans-serif;
+                margin:30px auto;
+                color:#666;
+                padding:0;
+            }
+            .foto {border:none;}
+            /* CSS para efeitos jQuery */
+            #galeria {
+                width:500px;
+                position: relative;
+            }
+            .abre-fecha {
+                position:absolute;
+                background:#add6ef;
+                left:0;
+                top:0;
+                text-align:center;
+                font-size:11px;
+                cursor:pointer;
+            }
+            /* Fim CSS para efeitos jQuery */
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function() {
+                var af = $('#galeria + span').addClass('abre-fecha')
+                .css({opacity: 0.6, width: 120});
+                $('#galeria').prepend(af)
+                .click(function(event) {
+                    event.preventDefault();
+                    $('.abre-fecha').hide();
+                    if($('.foto').attr('width') > 120) {
+                        $('.foto').animate(
+                        {width: 120,
+                            height: 90,
+                            opacity: 0.2},1500,function() {
+                            $('.foto').animate ({opacity: 1}, 1000);
+                            $('.abre-fecha').show().text('Clique para ampliar')
+                            .css({width: $('.foto').attr("width")});
+                        });
+                        $('.abre-fecha').text('Clique para ampliar')
+                        .css({width: $('.foto').attr("width")});
+                    } else {
+                        $('.foto').animate(
+                        {width: 500,
+                            height: 375,
+                            opacity: 0.2
+                        },1500,function() {
+                            $('.foto').animate ({opacity: 1}, 1000);
+                            $('.abre-fecha').show().text('Clique para fechar')
+                            .css({width: $('.foto').attr("width")})
+                        });
+                    };
+                });
+            });
+            // ]]>
+        </script>
+    </head>
+    <body>
+
+        <div id="galeria">
+            <a href="1.jpg"><img src="1.jpg" alt="Descrição da foto" width="120" height="90" class="foto" /></a>
+        </div>
+        <span>Clique para ampliar</span>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #ccc;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-12.2b.html">&laquo; anterior</a> | <a href="arquivo-12.2d.html">próximo &raquo;</a></i>
+
+    </body>
+</html>

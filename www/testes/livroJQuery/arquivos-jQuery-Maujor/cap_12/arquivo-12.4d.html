@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Imagens e galerias de fotos</title>
+        <style type="text/css" media="all">
+            body {
+                font: 80%/1.2 Arial, Helvetica, sans-serif;
+                color:#666;
+                padding:0;
+                margin:0;
+                background:#d6e2e5;
+            }
+            #tudo {
+                width:600px;
+                padding:0 20px;
+                margin:0 auto;
+                background:#fff;
+                border:1px dotted #999;
+            }
+            .foto{border:none;}
+            /* CSS para efeitos jQuery  */
+            #tela {                                    
+                position:relative;
+                width:500px;
+                height:375px;
+                margin: 0 auto 5px auto;
+                border:4px solid #999;
+            }
+            #galeria a, #galeria a:visited {
+                text-decoration:none;
+                color:#333;
+                padding:2px 6px;
+                background:#999;
+                margin-right:2px;
+            }
+            #galeria a:hover, #tudo #galeria a.corrente {
+                color:#999;
+                background:#ccc;	
+            }
+            #tela  p.legenda {
+                position: absolute;
+                width:480px;
+                left:0;
+                bottom:0;
+                font-size:14px;
+                font-weight:bold;
+                padding:2px 10px;
+                border-top: 1px dotted #fff;
+                background:#000;
+                margin:0;
+            }
+            /* Fim CSS para efeitos jQuery */
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function() {
+                $('.abre-fecha').hide();
+                $('.foto').each(function(i) {
+                    $(this).replaceWith('<span title="' +  $(this).attr('alt') +'">' + (i+1) + '</span>');
+                    $('#galeria').css('textAlign', 'center');
+                });
+                $('<div id="tela" ><img src="1.jpg" alt="Descrição da imagem" /></div>')
+                .insertBefore('#galeria')
+                $('#galeria a').click(function(event) {
+                    event.preventDefault();
+                    if (!$('#tela img').is(':animated')) {				
+                        $('.legenda').remove();
+                        var legenda = $(this).children('span').attr('title')
+                        $('#galeria a').removeClass("corrente");
+                        $(this).addClass("corrente");
+                        $('#tela img').attr('src', $(this).text() + '.jpg')
+                        .css('opacity', '0.3').animate({opacity: 1 }, 1500,
+                        function() {
+                            $('#tela').append('<p class="legenda">' + legenda + '</p>');
+                            $('.legenda').css('opacity', 0.6)
+                        });
+                    }
+                });
+            });
+            // ]]>
+        </script>
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Fotos de Brasília</h1>
+            <div id="galeria">
+                <a href="1.jpg"><img src="1.jpg" alt="Descrição da foto 1: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eleifend, purus quis laoreet faucibus, ante augue malesuada mi." width="100" height="75" class="foto" /></a>
+                <a href="2.jpg"><img src="2.jpg" alt="Descrição da foto 2: Donec ullamcorper cursus dolor. Duis vitae ipsum. Maecenas dapibus hendrerit diam." width="100" height="75"  class="foto" /></a>
+                <a href="3.jpg"><img src="3.jpg" alt="Descrição da foto 3: Pellentesque sapien. Sed purus sapien, eleifend ac, volutpat ac, molestie eget, massa." width="100" height="75"  class="foto" /></a>
+                <a href="4.jpg"><img src="4.jpg" alt="Descrição da foto 4: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam in eros. Aliquam mattis est et arcu." width="100" height="75"  class="foto" /></a>
+                <a href="5.jpg"><img src="5.jpg" alt="Descrição da foto 5: Nulla facilisi. Duis euismod, lacus et cursus volutpat, dui arcu porttitor diam, at gravida nibh justo non erat. " width="100" height="75"  class="foto" /></a>
+                <a href="6.jpg"><img src="6.jpg" alt="Descrição da foto 6:Nullam quis justo. Duis porta, nisl faucibus porttitor pulvinar, neque erat. " width="100" height="75"  class="foto" /></a>
+                <a href="7.jpg"><img src="7.jpg" alt="Descrição da foto 7: Pellentesque tortor tellus, faucibus nec, convallis at, tempor et, turpis. Aenean lacinia, enim non vehicula pharetra, neque orci pulvinar massa, vel sodales risus risus sed nibh. Integer dignissim felis eu ante. Donec nisl." width="100" height="75"  class="foto" /></a>
+                <a href="8.jpg"><img src="8.jpg" alt="Descrição da foto 8: Ut vel diam. Donec a massa. Aenean nulla felis, porta et, suscipit vitae, condimentum at, justo. Fusce neque. In a magna euismod dolor sollicitudin commodo. Vestibulum turpis odio, pretium nec, lacinia sit amet, cursus porta, arcu. Vivamus erat. In velit." width="100" height="75"  class="foto" /></a>
+                <a href="9.jpg"><img src="9.jpg" alt="Descrição da foto 9: Nulla aliquam vestibulum est." width="100" height="75" class="foto" /></a>
+                <a href="10.jpg"><img src="10.jpg" alt="Descrição da foto 10: Etiam adipiscing ligula vitae tortor. In hac habitasse platea dictumst. Curabitur urna lacus, pulvinar id, ornare a, viverra ut, arcu." width="100" height="75"  class="foto" /></a>
+            </div>
+
+            <span class="abre-fecha">Clique para ampliar</span>
+
+            <h2>Título nível 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eleifend, purus quis laoreet faucibus, ante augue malesuada mi, id rhoncus augue lorem eget elit. Ut sollicitudin sodales purus. Phasellus libero felis, blandit nec, commodo ut, imperdiet ut, nibh. Suspendisse potenti. Donec ullamcorper cursus dolor.</p> 
+
+            <i style="display:block; font-style:normal; margin:50px 0; border-top:1px dotted #ccc;
+               padding-top:5px;">Arquivos exemplo: <a href="arquivo-12.4c.html">&laquo; anterior</a> | <a href="arquivo-12.4e.html">próximo &raquo;</a></i></div>
+    </body>
+</html>

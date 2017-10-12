@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | FAQ</title>
+        <link rel="stylesheet" type="text/css" href="normal.css" />
+        <style type="text/css" media="all">
+            #wrap {
+                width:600px;
+            }
+            #topo {
+                height:50px;
+                text-align:center;
+                background:#069;
+            }
+            #rodape {
+                height:30px;
+                text-align:center;
+                background:#f90;
+                clear:both;
+            }
+
+            #principal{
+                width:385px;
+                padding:0 10px;
+                background:#0f0;
+                float:left;
+            }
+            #auxiliar{
+                width:175px;
+                padding:0 10px;
+                background:#ff0;
+                float:right;
+            }
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            jQuery(document).ready(function() {
+                $('.mensagem').css('display', 'none');
+                $('.mensagem1').css('display', 'none');
+                // Não funciona
+                $('#nfunciona').click(function() {
+                    $('#minhaLista').find('li').eq(2).text().replace('texto do terceiro item','TEXTO ALTERADO');
+                });
+                // Funciona! 
+                $('#funciona').click(function() {
+                    var $elementoTres = $('#minhaLista').find('li').eq(2);
+                    var textoElementoTres = $elementoTres.text().replace('texto do terceiro item','TEXTO ALTERADO');
+                    $elementoTres.text(textoElementoTres).css('color', 'red'); 
+                });
+	
+                $('#reset').click(function() {
+                    var $elementoTres = $('#minhaLista').find('li').eq(2);
+                    var textoElementoTres = $elementoTres.text().replace('TEXTO ALTERADO','texto do terceiro item');
+                    $elementoTres.text(textoElementoTres).css('color', ''); 
+                });
+	
+                // Animação x nível de bloco
+                $('#lorem').click(function() {
+                    $(this).hide(3000, function() { 
+                        $('.mensagem').toggle();
+                        $('#recarregar').toggle();
+                    });
+                });	
+                // append copiar x mover
+                $('#aum').click(function() {
+                    $(this).toggle();
+                    $('#adois').toggle();
+                    $('.mensagem1').toggle();
+                    $('#um').append( $('#inserir') );
+                    $('.movido').toggle();
+                    $('.recarregar1').toggle();
+                });	
+	
+                $('#adois').click(function() {
+                    $(this).toggle();
+                    $('#aum').toggle();
+                    $('.mensagem1').toggle();
+                    $('.dois').append( $('#inserir') );
+                    $('.copiado').toggle();
+                    $('.recarregar1').toggle();
+                });	
+                // mudar estilo
+                $('#estilo-um').click(function(event) {
+                    event.preventDefault();
+                    $('link[rel="stylesheet"]').attr('href', 'um.css');
+                });
+ 
+                $('#estilo-dois').click(function(event) {
+                    event.preventDefault();
+                    $('link[rel="stylesheet"]').attr('href', 'dois.css');
+                });
+ 
+                $('#estilo-normal').click(function(event) {
+                    event.preventDefault();
+                    $('link[rel="stylesheet"]').attr('href', 'normal.css');
+                });
+                // dica campo formulario
+                $('#form1 .dica').css({
+                    display: 'none',
+                    color: '#f00'
+                })
+		
+                $('#form1 input').focus(function() {
+                    $(this).next('span').css('display', 'inline');
+                }).blur(function() {
+                    $(this).next('span').css('display', 'none');
+                });
+                // efeito fade	
+                $('#efeito-fade').hover(function() {
+                    $(this).css('visibility', 'none');
+                }, function() {
+                    $(this).css('display', 'inline');
+                });	
+                // retirar texto padrao	
+                var texto_campo;
+                var texto_padrao = $('#busca').val();
+                $('#busca').focus(function() {
+                    texto_campo = $(this).val();
+                    (texto_campo == texto_padrao) ? $(this).val('') : $.noop; 
+                }).blur(function() {
+                    texto_campo = $.trim($(this).val());
+                    (texto_campo == '') ? $(this).val(texto_padrao) : $.noop; 
+                })
+                // efeito rollover	
+                $('#rollover').find('img').css({
+                    border: 'none',
+                    position: 'relative'
+                })
+		
+                $('#rollover').css({
+                    position: 'relative',
+                    width: 140,
+                    overflow: 'hidden'
+                }).hover(function() {
+                    $(this).find('img').css('left', '-150px')
+		
+                }, 
+                function() {
+                    $(this).find('img').css('left', 0)
+                });
+                // simular mesma altura	
+                function mesmaAltura(cum, cdois) {
+                    cumAltura = $(cum).height(); 
+                    cdoisAltura = $(cdois).height();
+                    maiorAltura = Math.max(cumAltura, cdoisAltura); 
+                    $(cum).height(maiorAltura);	
+                    $(cdois).height(maiorAltura);
+                };	
+		
+                $('.com').click(function() {
+                    mesmaAltura('#principal', "#auxiliar");
+                });
+                $('.sem').click(function() {
+                    $('#principal').height(cumAltura);	
+                    $('#auxiliar').height(cdoisAltura);
+                });
+                // scroll top	
+                $('<img />', {
+                    id: 'irtopo',
+                    src: 'irtopo.gif',
+                    alt: 'Ir topo'
+                }).appendTo('body')
+                .css({
+                    position: 'fixed',
+                    cursor: 'pointer',
+                    right: 0,
+                    bottom: 0
+                });
+		
+                $('#irtopo').click(function() {
+                    $('html, body')
+                    .animate({scrollTop: 0}, 1500);
+                });	
+            })
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Apêndice E - FAQ jQuery</h1>
+            <h2>Como faço para habilitar e desabilitar um elemento?</h2>
+            <select id="xpto" style="width:200px">
+                <option>Opção um</option>
+                <option>Opção dois</option>
+            </select>
+            <input type="button" value="Desabilitar" onclick="$('#xpto').attr('disabled', 'disabled')" />
+            <input type="button" value="Habilitar" onclick="$('#xpto').removeAttr('disabled')" />
+
+            <hr />
+            <h2>Como faço para marcar e desmarcar um elemento input?</h2> 
+            <label><input type="checkbox" id="ypto" />Marca/Desmarca</label>
+            <input type="button" value="Marcar" onclick="$('#ypto').attr('checked', 'checked')" />
+            <input type="button" value="Desmarcar" onclick="$('#ypto').removeAttr('checked')" />
+
+            <hr />
+            <h2>Como obter o valor textual da opção selecionada em um elemento select?</h2>
+            <select id="meuSelect" style="width:200px">
+                <option value="fruta_um">Abacate</option>
+                <option value="fruta_dois">Abacaxi</option>
+                <option value="fruta_tres">Banana </option>
+                <option value="fruta_quatro">Figo</option>
+                <option value="fruta_cinco">Goiaba</option>
+                <option value="fruta_seis">Laranja</option>
+            </select>
+            <input type="button" value="Valor" onclick="alert( $('#meuSelect').val() )" />
+            <input type="button" value="Texto" onclick="alert( $('#meuSelect option:selected').text() )" />
+
+            <hr />
+            <h2>Como substituir o texto do terceiro elemento de um conjunto de seis elementos?</h2>
+            <ol id="minhaLista">
+                <li>texto do primeiro item</li>
+                <li>texto do segundo item</li>
+                <li>texto do terceiro item</li>
+                <li>texto do quarto item</li>
+                <li>texto do quinto item</li>
+                <li>texto do sexto item</li>
+            </ol>
+            <p>Clique neste botão e o script NÃO funciona: <input type="button" value="Alterar texto" id="nfunciona" style="vertical-align:middle" /><br />
+            </p>
+            <p>Clique neste botão e o script funciona: <input type="button" value="Alterar texto" id="funciona" style="vertical-align:middle" /><br /><input type="button" value="Reset" id="reset" /></p>
+
+            <hr />
+            <h2>Por que a animação de um elemento faz com ele se comporte como elemento nível de bloco?</h2>
+            <p>Clique no texto  abaixo para visualizar animação x nível de bloco</p> 
+            <div class="mensagem">
+                <p id="recarregar" style="display:none; color:red">Recarregue a página para repetir</p>
+            </div>
+
+            <a href="#recarregar" id="lorem">Lorem ipsum dolor</a>
+
+            <hr />
+            <h2>Qual o comportamento dos métodos de inserção quando o conteúdo a inserir é um objeto jQuery retirado do documento?</h2> 
+            <p><b id="inserir">texto negrito inserido</b></p>
+
+            <p id="um">Inserção somente neste parágrafo: </p>
+
+            <p class="dois">Inserção neste parágrafo e no próximo: </p>
+            <p class="dois">Inserção neste parágrafo e no anterior: </p>
+            <button type="button" id="aum">append em um elemento</button>
+            <button type="button" id="adois">append em mais de um elemento</button>
+            <div class="mensagem1">
+                <p class="movido" style="display:none;">Notar que o texto foi movido</p>
+                <p class="copiado" style="display:none;">Notar que o texto foi copiado</p>
+                <p class="recarregar1" style="display:none; color:red">Recarregue a página para repetir</p>
+            </div>
+
+            <hr />
+            <h2>Como construir uma chave de mudança de estilo?</h2> 
+            <p>Escolha um estilo<p>
+                    <button type="button" id="estilo-um">Tema um</button>
+                    <br />
+                    <button type="button" id="estilo-dois">Tema dois</button>
+                    <br />
+                    <button type="button" id="estilo-normal">Tema normal</button>
+
+                    <hr />
+                    <h2>Como criar uma dica para campo de formulário?</h2> 
+                    <p>Entre no campo<p>
+                            <form action="" method="get" id="form1">
+                                <label for="cpf">CPF:</label><br />
+                                <input type="text" id="cpf" />
+                                <span class="dica">Somente números</span>
+                                <br />
+                                <label for="senha">Senha:</label><br />
+                                <input type="password" id="senha" />
+                                <span class="dica">Mínimo de 6 caracteres</span>
+                            </form>
+                            <hr />
+
+                            <h2>Como retirar texto padrão de campo de formulário?</h2> 
+                            <p>Entre no campo<p>
+                                    <form action="" method="get" id="form2">
+                                        <label for="busca">Busca:</label><br />
+                                        <input type="text" id="busca" value="Entre sua busca" />
+                                    </form>
+                                    <hr />
+
+                                    <h2>Como criar um efeito rollover?</h2> 
+                                    <p>Passe o mouse sobre a imagem<p>
+                                            <div id="rollover"><a href="#"><img  src="coracao.jpg" alt="coração" /></a></div>
+                                            <hr />
+
+                                            <h2>Como simular mesma altura?</h2> 
+                                            <p>Clique os botões para ver o script em funcionamento</p>
+                                            <button type="button" class="com">Com script</button>
+                                            <button type="button" class="sem">Sem script</button>
+                                            <div id="wrap">
+                                                <div id="topo">
+                                                    <h2>Topo</h2>
+                                                </div>
+                                                <div id="principal">
+                                                    <h2>Coluna principal</h2>
+                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eleifend, purus quis laoreet faucibus, ante augue malesuada mi, id rhoncus augue lorem eget elit. Ut sollicitudin sodales purus.</p>
+                                                    <p>Phasellus libero felis, blandit nec, commodo ut, imperdiet ut, nibh. Suspendisse potenti. Donec ullamcorper cursus dolor. Duis vitae ipsum. Maecenas dapibus hendrerit diam. Morbi varius, massa id pretium accumsan, nunc lorem congue libero, ut euismod metus libero id nulla. Duis posuere odio sed velit vulputate venenatis. Suspendisse et dui ac metus auctor fringilla. Curabitur interdum augue a pede.</p>
+                                                </div>
+                                                <div id="auxiliar">
+                                                    <h3>Coluna auxiliar</h3>
+                                                    <ul>
+                                                        <li><a href="#">Link1</a></li>
+                                                        <li><a href="#">Link2</a></li>
+                                                        <li><a href="#">Link3</a></li>
+                                                        <li><a href="#">Link4</a></li>
+                                                        <li><a href="#">Link5</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div id="rodape">
+                                                    <h3>Rodapé</h3>
+                                                </div>
+                                            </div>
+                                            <hr />
+
+                                            <h2>Como criar um botão "Ir ao topo"?</h2> 
+                                            <p>A técnica mostrada destina-se a inserir um botão do tipo "Ir ao topo", fixo no canto inferior da tela, mas pode ser adaptada para inserção em qualquer lugar da página.</p>
+                                            <p>O botão foi inserido nesta página e está em funcionamento.</p>
+
+                                            <hr />
+
+                                            <i style="display:block; font-style:normal; margin:50px 0; border-top:1px dotted #ccc;
+                                               padding-top:5px;">Arquivos exemplo:  <a href="../cap_14/arquivo-14.3a.html">&laquo; capítulo 14</a></i>
+
+
+
+                                            </div>
+                                            </body>
+                                            </html>

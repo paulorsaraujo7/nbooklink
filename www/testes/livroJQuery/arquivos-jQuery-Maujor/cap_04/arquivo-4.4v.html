@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Inspeção do DOM</title>
+        <style type="text/css" media="all">
+            form{margin:15px 0;}
+            div {
+                width:400px;
+                margin:20px 0;
+                border:1px solid #000;
+                text-align:center;
+                color:#f00;
+            }
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function(){
+                $('button:eq(0)').click(function () {
+                    $('div').empty();
+                    $('div').append($('input').map(function(){
+                        return $(this).val();
+                    }).get().join(", ") );
+                });
+	
+                $('button:eq(1)').click(function () {
+                    $('div').empty();
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+        <p>Digite nome e e-mail nos campos e rode o script</p>
+        <button type="button">map()</button>
+        <button type="button">Reset</button>
+        <form action="" method="get">
+            <label>Nome:<br /><input type="text" /></label><br />
+            <label>E-mail:<br /><input type="text" /></label><br />
+            <span>Sexo:</span><br />
+            <label><input  type="radio" name="sexo" value="masculino"  /> Masculino</label><br />
+            <label><input  type="radio" name="sexo" value="feminino" /> Feminino</label>
+        </form>
+        <div></div>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-4.4u.html">&laquo; anterior</a> | <a href="arquivo-4.4x.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+

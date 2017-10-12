@@ -1,0 +1,24 @@
+body {
+    font: 15px/1.2 Georgia, "Times New Roman", Times, serif; 
+    color:#333;
+    padding:0;
+    margin:20px 0;
+    background:#060;
+}
+#tudo {
+    width:600px;
+    overflow:auto;
+    padding:0 20px 20px;
+    margin:0 auto;
+    background:#000;
+    color:#fff;
+    border:2px solid #f00;
+}
+h1{font-size:18px; text-align:center;margin:20px;}
+h2{font-size:14px;margin:10px 0;}
+hr {margin-top:20px; height:1px; border-top:1px dotted #999;}
+p {margin:0 0 10px 0;}
+input[type="button"] {margin-left:10px;}
+#lorem{background:#bfe2d8; text-decoration:none; color:#333;}
+.mensagem, .mensagem1 {width:300px; background:#444;padding:5px 10px;border:1px dotted #f00;}
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | Eventos</title>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function(){
+                $('img').toggle(
+                function(){
+                    $('img').css('display', 'block').attr({src: '2.gif'});			
+                },
+                function(){
+                    $('img').css('display', 'block').attr({src: '3.gif'});			
+                },
+                function(){
+                    $('img').css('display', 'block').attr({src: '4.gif'});			
+                },
+                function(){
+                    $('img').css('display', 'block').attr({src: '1.gif'});			
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+
+        <p>Clique seguidamente a imagem.</p>
+        <img alt="Bate coração" src="1.gif" />
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-5.2b.html">&laquo; anterior</a> | <a href="arquivo-5.2d.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+

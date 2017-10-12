@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Livro jQuery do Maujor | CSS</title>
+        <style type="text/css" media="all">
+            div {
+                width:100px;
+                height:100px;
+                background:#0f0;
+                margin:50px 0 0 100px; 
+            }
+        </style>
+        <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function(){
+                $('button').click(function () {		
+                    $('div').offset({top:100, left:600}); 
+                    $('span').html('A DIV foi deslocada para as coordenadas:<br />left: 600px<br />top:100px');
+                });
+            });
+            // ]]>	
+        </script>
+    </head>
+    <body>
+
+        <button type="button">Offset DIV</button><br />	
+        <div>DIV deslocada com offset()</div>
+        <span></span>
+
+        <i style="display:block; font-style:normal; margin-top:50px; border-top:1px dotted #333;
+           padding-top:5px;">Arquivos exemplo: <a href="arquivo-4.2a.html">&laquo; anterior</a> | <a href="arquivo-4.2c.html">próximo &raquo;</a></i>
+
+    </body>
+</html>
+

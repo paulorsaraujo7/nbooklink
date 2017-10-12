@@ -1,0 +1,14 @@
+/*
+Controla o comportamento de gis Ajax
+Criado em:18/11/2012
+*/
+
+
+#imgGifAjax
+{
+    position: absolute;
+    left: 50%;  
+    top: 50%;
+    margin-top: -60px;
+    margin-left: -30px;
+}
