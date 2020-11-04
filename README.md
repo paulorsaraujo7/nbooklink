@@ -11,7 +11,3 @@ It's avaliable in two idioms, english and portuguese (Brazil).
 
 Graphic design was done in Macromedia Fireworks.
 
-Fell free to send any sugestions.
-
-Please, fell free to visit www.nbooklink.com
-
