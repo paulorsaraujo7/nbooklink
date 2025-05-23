@@ -10,7 +10,7 @@
 - 🔍 **Search and Filters**: Quickly find a favorite by title, group, or URL.
 - 💬 **Notes and Tags**: Add notes and tags for context and better organization.
 - 🛡️ **Privacy and Permissions**: Control who can view or edit your favorites and groups.
-- ✅ **English and Portuguese**
+- ✅ **English and Portuguese**: Available in two languages.
 
 
 ## 🧑‍💻 Tech Stack
