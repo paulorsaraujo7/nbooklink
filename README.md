@@ -1,13 +1,29 @@
-# nbooklink
-NBooklink It is a manager of your bookmarks, regardless of the browser you use.
+# 📌 NBookLink - Favorite Sites Manager
 
-What was used to build NBookLink: PHP 5, MySQL, AJAX, Java Script, JQuery, HTML e CSS. 
+**NBookLink** is a modern web application for managing your favorite websites, allowing users to organize, share, and quickly access their preferred links with ease and efficiency.
 
-This project was made in 2013 and has since been stopped. 
- 
-No PHP framework or CSS framework were used for this project. Some design patterns were used, as such, DAO, MVC and Singleton.
+## 🚀 Key Features
 
-It's avaliable in two idioms, english and portuguese (Brazil).
+- ✅ **Add Favorites**: Save website links with titles and descriptions.
+- 📂 **Group by Categories**: Organize your favorites into custom groups.
+- 🔄 **Share Favorites/Groups**: Share collections of favorites with other users via a direct link or within the platform.
+- 🔍 **Search and Filters**: Quickly find a favorite by title, group, or URL.
+- 💬 **Notes and Tags**: Add notes and tags for context and better organization.
+- 🛡️ **Privacy and Permissions**: Control who can view or edit your favorites and groups.
+- ✅ **English and Portuguese**
 
-Graphic design was done in Macromedia Fireworks.
+
+## 🧑‍💻 Tech Stack
+
+- **Frontend**: JQuery, AJAX, + Bootstrap CSS + HTML
+- **Backend**: PHP5 
+- **Database**: MySQL
+- **Hosting**: Disabled since 2013
+
+📄 License
+This project is licensed under the MIT License.
+
+Made with ❤️ by Paulo Ricardo
+
+
 
